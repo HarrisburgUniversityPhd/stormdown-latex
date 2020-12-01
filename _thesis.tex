@@ -1,0 +1,82 @@
+% Change to 'masters' to produces the masters thesis preliminary pages
+\documentclass[oneside,phd,etd]{HUclass}
+
+\usepackage{import}
+
+% preamble contains title page, signature page, acknowledgement and abstract texts
+\usepackage{_preamble}
+
+% Packages used
+\usepackage[utf8]{inputenc} % Remove warning on ascii conversion
+\usepackage[T1]{fontenc} % Remove warning on ascii conversion
+\usepackage[refsection=part,citestyle=apa,style=authoryear,natbib=true,backend=biber]{biblatex}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+
+% Make chapter numbers into string words 1 -> ONE
+\usepackage{fmtcount}
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{\vspace *{40\p@ }{\parindent \z@ 
+\raggedright \normalfont \ifnum \c@secnumdepth >\m@ne \Huge \bfseries 
+\@chapapp \space \Numberstring{chapter} \vskip 10\p@ \fi #1\par \nobreak \vskip 30\p@ }}
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\leftmark}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\cfoot{\thepage}
+
+\addbibresource{_bib.bib}
+
+\begin{document}
+
+\hypersetup{breaklinks=true}
+
+ % Start page counting in roman numerals
+ \frontmatter
+
+ % This command makes the formal preliminary pages.
+ % You can comment it out during the drafting process if you want to save paper.
+ \makepreliminarypages
+ \doublespace
+ % Make the table of contents.
+ \tableofcontents
+ \thispagestyle{plain}
+ 
+  % Make the list of figures
+ \mylistoffigures
+ \thispagestyle{plain}
+
+ % Make the list of tables
+ \mylistoftables
+ \thispagestyle{plain}
+ 
+  % This page is OPTIONAL. To remove, comment out and \dedicationpage in _thesis.tex
+ %\dedicationpage
+ \clearemptydoublepage
+ 
+ % Start regular page counting at page 1
+ \mainmatter
+
+% OK. Everything is set up. Type your thesis here.
+\include{chapter1/ch1}
+\include{chapter2/ch2}
+\include{chapter3/ch3}
+\include{chapter4/ch4}
+\include{conclusions/conclusion}
+%Appendices
+\include{LatexThesis/Thesis/appendix/_appendix}
+
+% Bibliography
+\begingroup
+    \setlength\bibitemsep{10pt}
+    \linespread{1}\selectfont            
+%    \cleardoupagepage
+    \addcontentsline{toc}{part}{References}
+    \printbibliography[title=References]
+\endgroup
+%\cleardoupagepage
+%\addcontentsline{toc}{part}{References}
+
+\end{document}
