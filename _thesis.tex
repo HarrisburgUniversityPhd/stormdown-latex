@@ -24,8 +24,141 @@ $endif$
 
 \usepackage{import}
 
-% preamble contains title page, signature page, acknowledgement and abstract texts
-\usepackage{_preamble}
+% ==================================================== % ==================================================== %
+
+\usepackage{amsmath}
+\usepackage{ifpdf}
+
+\usepackage{xcolor}
+\ifpdf  
+  \usepackage[pdftex]{graphicx}
+\else
+  \usepackage[dvips]{graphicx}
+\fi
+
+\usepackage{afterpage}
+\usepackage{rotating}
+%\usepackage{subfigure}
+% Change the CLASS FILE from HUclass to bookbinding (and edit class file names accordingly) after your thesis is turned in electronically so you can get your dissertation bound and don't forget to change the above from oneside to twoside!!!!!!!!!!!!!!
+\usepackage{fancyhdr}
+  \fancyfoot[C,CO]{\textbf{\thepage}}
+  \pagestyle{plain}
+  \renewcommand{\chaptermark}[1]{\markboth{\chaptername \ \thechapter \ \ #1}{}}
+  \renewcommand{\sectionmark}[1]{\markright{\thesection \ \ #1}}
+
+% The caption package allows us to change the formatting of figure captions.
+% The commands here change to the suggested caption format: single spaced and a bold tag
+\usepackage[margin=0.3in,labelfont=bf,labelsep=none]{caption}
+ \DeclareCaptionFormat{suggested}{\singlespace#1#2 #3\par\doublespace}
+ \captionsetup{format=suggested}
+
+% The cite package cleans up the way citations are handled.  For example, it
+% changes the citation [1,2,3,6,7,8,9,10,11] into [1-3,6-11].  If your advisor
+% wants superscript citations, use the overcite package instead of the cite package.
+%\usepackage{cite}
+
+% The makeidx package makes your index for you.  To make an index entry,
+% go to the place in the book that should be referenced and type
+%  \index{key}
+% An index entry labeled "key" (or whatever you type) will then
+% be included and point to the correct page.
+\usepackage{makeidx}
+
+
+\makeindex
+
+% The url package allows for the nice typesetting of URLs.  Since URLs are often
+% long with no spaces, they mess up line wrapping.  The command \url{http://www.physics.byu.edu}
+% allows LaTeX to break the url across lines at appropriate places: e.g. http://www.physics.byu.edu
+\usepackage{url}
+\urlstyle{rm}
+
+% The hyperref package provides automatic linking and bookmarking for the table
+% of contents, index, equation references, and figure references.
+%
+% To include a link in your pdf use \href{URL}{Text to be displayed}.  If your
+% display text is the URL, you probably should use the \url{} command discussed
+% above.
+%
+% To add a bookmark in the pdf you can use \pdfbookmark.  You can look up its usage
+% in the hyperref package documentation
+%UL 15 Oct 2019, enable link highlighting to be turned off from YAML
+\usepackage[bookmarksnumbered,pdfpagelabels=true,plainpages=false,colorlinks=true,
+            linkcolor=black,citecolor=black,urlcolor=blue,hidelinks=$hidelinks$]{hyperref}
+
+
+
+
+%   \makepreliminarypages : Makes the preliminary pages
+%   \clearemptydoublepage : same as \cleardoublepage but doesn't put page numbers
+%                           on blank intervening pages
+%   \singlespace          : switch to single spaced lines
+%   \doublespace          : switch to double spaced lines
+\newcommand{\bibs}{DissertationRefs}
+\newcommand{\comments}[1]{}
+
+% ==================================================== %
+%                                                      %
+%   Fill in these fields for the preliminary pages     %
+%                                                      %
+% ==================================================== %
+
+% This is the year and month that you submit the thesis
+  \Year{2020}
+  \Month{April}
+  \Author{MV}
+  \University{Harrisburg University of Science and Technology}
+  \Department{Department of Analytics}
+  \DegreeShort{Ph.D.}
+
+% If you have a long title, split it between two lines. The \TitleBottom field defines the second line
+% A two line title should be an "inverted pyramid" with the top line longer than the bottom.
+\TitleTop{Graph Neural Networks - DRAFT}
+\TitleMiddle{Learning Graph Embeddings for Link Prediction and Node Classification}
+\TitleBottom{Through HyperGraph Convolutions, Markovian Networks, and Variational Inference}
+
+% Your research advisor
+  \Advisor{K P}
+  \AdvisorTitle{Ph.D.}
+
+% The representative of the department who will approve your thesis (usually the chair) 
+  \DepRep{}
+  \DepRepTitle{}
+
+% Acknowledge those who helped and supported you
+  \Acknowledgments{
+My deepest gratitude to Dr. KP for his mentoring, and to my committee members: Dr. RS, Dr. RF, and Dr. KH.
+
+}
+
+
+% The text of your abstract
+% Known bugs
+%   Having a tiny bit of the abstract spill to second page defeats page number removal.
+%   Workaround: make the abstract a little longer or a little shorter.
+%
+  \Abstract{
+   
+  
+
+}
+
+% The text of your dedication
+% This page is OPTIONAL. To remove, comment out \dedicationpage in _thesis.tex
+  \Dedication{
+    To my family
+}
+
+
+% The members of your graduate committee
+  \MemberA{RF}
+  \MemberATitle{Ph.D.}
+  \MemberB{RS}
+  \MemberBTitle{Ph.D.}
+  \MemberC{KS}
+  \MemberCTitle{Ph.D.}
+
+% ==================================================== % ==================================================== %
 
 % Packages used
 \usepackage[utf8]{inputenc} % Remove warning on ascii conversion
