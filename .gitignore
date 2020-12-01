@@ -1,10 +1,11 @@
+# RStudio
 .Rproj.user
 .Rhistory
 .RData
-.Ruserdata
-.DS_Store
-_main.bbl
-_main.blg
-_main.run.xml
-_todo.md
+
+# intermediate knit
 _bookdown_files
+_main.log
+_main.maf
+_main.mtc*
+

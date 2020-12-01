@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Final Notes on The OxThesis template and on collaboration | oxforddown: An Oxford University Thesis Template for R Markdown</title>
-  <meta name="description" content="oxforddown:<br />
-An Oxford University Thesis<br />
-Template for R Markdown" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <title>4 Final Notes on The OxThesis template and on collaboration | stormdown: A Harrisburg University Dissertation Template for R Markdown</title>
+  <meta name="description" content="stormdown:<br />
+A Harrisburg University Dissertation<br />
+Template for R Markdown</p>" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Final Notes on The OxThesis template and on collaboration | oxforddown: An Oxford University Thesis Template for R Markdown" />
+  <meta property="og:title" content="4 Final Notes on The OxThesis template and on collaboration | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
   <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://github.com/HarrisburgUniversityPhd/stormdown" />
   
   
-  
-  
+  <meta name="github-repo" content="HarrisburgUniversityPhd/stormdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Final Notes on The OxThesis template and on collaboration | oxforddown: An Oxford University Thesis Template for R Markdown" />
+  <meta name="twitter:title" content="4 Final Notes on The OxThesis template and on collaboration | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
   
   
   
@@ -26,6 +26,7 @@ Template for R Markdown" />
 <meta name="author" content="Author Name" />
 
 
+<meta name="date" content="2020-12-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -61,12 +62,15 @@ div.abstract{
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -75,14 +79,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -91,9 +97,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -139,9 +145,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-use-it"><i class="fa fa-check"></i>Why use it?</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#who-should-use-it"><i class="fa fa-check"></i>Who should use it?</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#why-use-it"><i class="fa fa-check"></i>Why use it?</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html#who-should-use-it"><i class="fa fa-check"></i>Who should use it?</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="rmd-basics.html"><a href="rmd-basics.html"><i class="fa fa-check"></i><b>1</b> R Markdown Basics: The Markdown syntax</a><ul>
 <li class="chapter" data-level="1.1" data-path="rmd-basics.html"><a href="rmd-basics.html#markdown-basic-syntax"><i class="fa fa-check"></i><b>1.1</b> Markdown basic syntax</a><ul>
@@ -211,10 +217,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3" data-path="customisations-and-extensions.html"><a href="customisations-and-extensions.html#customizing-the-page-headers-and-footers"><i class="fa fa-check"></i><b>5.3</b> Customizing the page headers and footers</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i>Conclusion</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="the-first-appendix.html"><a href="the-first-appendix.html"><i class="fa fa-check"></i><b>A</b> The First Appendix</a></li>
 <li class="chapter" data-level="B" data-path="the-second-appendix-for-fun.html"><a href="the-second-appendix-for-fun.html"><i class="fa fa-check"></i><b>B</b> The Second Appendix, for Fun</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
       </nav>
@@ -224,9 +230,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><code>oxforddown</code>:<br />
-An Oxford University Thesis<br />
-Template for R Markdown</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><code>stormdown</code>:<br />
+A Harrisburg University Dissertation<br />
+Template for R Markdown</p></a>
           </h1>
         </div>
 
@@ -241,7 +247,7 @@ Template for R Markdown</a>
 <h2><span class="header-section-number">4.1</span> Beginning chapters with quotes</h2>
 <p>The OxThesis LaTeX template lets you inject some wittiness into your thesis by including a block of type <code>savequote</code> at the beginning of chapters.
 To do this, use the syntax <code>```{block type='savequote'}</code>.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
-<p>Add the reference for the quote with the chunk option <code>quote_author=&quot;my author name&quot;</code>.
+<p>Add the reference for the quote with the chunk option <code>quote_author="my author name"</code>.
 You will also want to add the chunk option <code>include=knitr::is_latex_output()</code> so that quotes are only included in PDF output.</p>
 <p>It’s not possible to use markdown syntax inside chunk options, so if you want to e.g. italicise a book name in the reference use a <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references">‘text reference’</a>: Create a named piece of text with ‘(ref:label-name) My text’, then point to this in the chunk option with <code>quote_author='(ref:label-name)'</code>.</p>
 </div>
@@ -265,7 +271,7 @@ For larger chunks, like this paragraph or indeed entire figures, you can use the
 </div>
 <div id="stopping-corrections-from-being-highlighted-in-the-output" class="section level3">
 <h3><span class="header-section-number">4.2.3</span> Stopping corrections from being highlighted in the output</h3>
-<p>For <strong>PDF</strong> output, go to <strong>index.Rmd</strong> and (i) set <code>corrections: false</code> under <code>params</code> in the YAML header (stops block of corrections from being highlighted), (ii) comment out <code>pandoc_args: [&quot;--lua-filter=scripts_and_filters/correction_filter.lua&quot;]</code> (stops inline corrections from being highlighted).</p>
+<p>For <strong>PDF</strong> output, go to <strong>index.Rmd</strong> and (i) set <code>corrections: false</code> under <code>params</code> in the YAML header (stops block of corrections from being highlighted), (ii) comment out <code>pandoc_args: ["--lua-filter=scripts_and_filters/correction_filter.lua"]</code> (stops inline corrections from being highlighted).</p>
 <p>For <strong>gitbook</strong> output, go to <strong>style.css</strong> and comment out the styling for <code>.correction</code>.</p>
 </div>
 </div>
@@ -290,8 +296,8 @@ I suspect some great solution will be developed in the not-to-distant future, pr
 <div class="footnotes">
 <hr />
 <ol start="4">
-<li id="fn4"><p>For more on custom block types, see the relevant section in <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html"><em>Authoring Books with R Markdown</em></a>.<a href="final-notes-on-the-oxthesis-template-and-on-collaboration.html#fnref4" class="footnote-back">↩</a></p></li>
-<li id="fn5"><p>In the <strong>.tex</strong> file for PDF output, this will put the content between <code>\begin{correction}</code> and <code>\end{correction}</code>; in gitbook output it will be put between <code>&lt;div class=&quot;correction&quot;&gt;</code> and <code>&lt;/div&gt;</code>.<a href="final-notes-on-the-oxthesis-template-and-on-collaboration.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>For more on custom block types, see the relevant section in <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html"><em>Authoring Books with R Markdown</em></a>.<a href="final-notes-on-the-oxthesis-template-and-on-collaboration.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>In the <strong>.tex</strong> file for PDF output, this will put the content between <code>\begin{correction}</code> and <code>\end{correction}</code>; in gitbook output it will be put between <code>&lt;div class="correction"&gt;</code> and <code>&lt;/div&gt;</code>.<a href="final-notes-on-the-oxthesis-template-and-on-collaboration.html#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -317,13 +323,13 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
-"facebook": false,
+"facebook": true,
 "twitter": true,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": false
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",

@@ -3,25 +3,26 @@
 ## thesis metadata ##
 #####################
 title: |
-  `oxforddown`: \
-  An Oxford University Thesis \
+  `stormdown`: \
+  A Harrisburg University Dissertation \
   Template for R Markdown
 author: Author Name
+date: "`r Sys.Date()`"
 college: Your College
 degree: Doctor of Philosophy
-degreedate: Michaelmas 2018
+degreedate: "`r format(Sys.Date(), '%Y')`"
 abstract: |
   `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |
   `r paste(readLines("front-and-back-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
-dedication: For Yihui Xie
+dedication: |
+  `r paste(readLines("front-and-back-matter/_dedication.Rmd"), collapse = '\n  ')`
 abbreviations: "front-and-back-matter/abbreviations" # path to .tex file with abbreviations
 
 #######################
 ## bibliography path ##
 #######################
 bibliography: references.bib
-bibliography-heading-in-pdf: Works Cited
 
 #####################
 ## PDF formatting  ##
@@ -45,6 +46,7 @@ params:
 #####################
 ## output options  ##
 #####################
+knit: "bookdown::render_book"
 output:
   bookdown::pdf_book:
     template: templates/template.tex
@@ -53,16 +55,12 @@ output:
     pandoc_args: ["--lua-filter=scripts_and_filters/correction_filter.lua"] #remove filter to stop applying blue background to inline corrections
   bookdown::gitbook:
     css: templates/style.css
-    config:
-      sharing:
-        facebook: false
-        twitter: yes
-        all: false
   bookdown::word_document2:
     toc: true   
 link-citations: true
 documentclass: book
-
+url: 'https\://github.com/HarrisburgUniversityPhd/stormdown'
+github-repo: HarrisburgUniversityPhd/stormdown
 ---
 
 
@@ -76,7 +74,3 @@ This will include code to create additional chunk options (e.g. for adding autho
 and to make sure lines in code soft wrap
 If you need to create your own additional chunk options, edit the file scripts/create_chunk_options.R
 -->
-
-
-```{r introduction, child = '_00-introduction.Rmd'}
-```

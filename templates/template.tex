@@ -76,29 +76,8 @@ $if(params.corrections)$
 \correctionstrue
 $endif$
 
-%%%%% BIBLIOGRAPHY SETUP
-% Note that your bibliography will require some tweaking depending on your department, preferred format, etc.
-% The options included below are just very basic "sciencey" and "humanitiesey" options to get started.
-% If you've not used LaTeX before, I recommend reading a little about biblatex/biber and getting started with it.
-% If you're already a LaTeX pro and are used to natbib or something, modify as necessary.
-% Either way, you'll have to choose and configure an appropriate bibliography format...
+\usepackage[refsection=part,citestyle=apa,style=authoryear,natbib=true,backend=biber]{biblatex}
 
-% The science-type option: numerical in-text citation with references in order of appearance.
-% \usepackage[style=numeric-comp, sorting=none, backend=biber, doi=false, isbn=false]{biblatex}
-% \newcommand*{\bibtitle}{References}
-
-% The humanities-type option: author-year in-text citation with an alphabetical works cited.
-% \usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=false, isbn=false]{biblatex}
-% \newcommand*{\bibtitle}{Works Cited}
-
-%UL 3 Dec 2018: set this from YAML in index.Rmd
-$if(bib-humanities)$
-\usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=$if(doi-in-bibliography)$$doi-in-bibliography$$else$false$endif$, isbn=false, uniquename=false]{biblatex}
-\newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
-$else$
-\usepackage[style=numeric-comp, sorting=none, backend=biber, doi=$doi-in-bibliography$, isbn=false]{biblatex}
-\newcommand*{\bibtitle}{$bibliography-heading-in-pdf$}
-$endif$
 
 % This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
 \renewcommand*{\bibfont}{\raggedright\small}
@@ -261,19 +240,5 @@ $endif$
 
 % all your chapters and appendices will appear here
 $body$
-
-
-%%%%% REFERENCES
-
-% JEM: Quote for the top of references (just like a chapter quote if you're using them).  Comment to skip.
-% \begin{savequote}[8cm]
-% The first kind of intellectual and artistic personality belongs to the hedgehogs, the second to the foxes \dots
-%   \qauthor{--- Sir Isaiah Berlin \cite{berlin_hedgehog_2013}}
-% \end{savequote}
-
-\setlength{\baselineskip}{0pt} % JEM: Single-space References
-
-{\renewcommand*\MakeUppercase[1]{#1}%
-\printbibliography[heading=bibintoc,title={\bibtitle}]}
 
 \end{document}

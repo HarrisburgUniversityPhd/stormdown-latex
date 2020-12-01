@@ -1,0 +1,8 @@
+`r if(!knitr:::is_latex_output()) '# References {-}'`
+
+`r if(!knitr:::is_latex_output()) '<div id="refs"></div>'`
+
+```{=latex}
+{\renewcommand*\MakeUppercase[1]{#1}%
+\printbibliography[heading=bibintoc,title=References]}
+```
