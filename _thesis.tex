@@ -1,6 +1,27 @@
 % Change to 'masters' to produces the masters thesis preliminary pages
 \documentclass[oneside,phd,etd]{HUclass}
 
+% UL 30 Nov 2018 pandoc puts lists in 'tightlist' command when no space between bullet points in Rmd file
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%UL 26 Mar 2019, enable strikethrough
+\usepackage[normalem]{ulem}
+
+% UL 1 Dec 2018, fix to include code in shaded environments
+$if(highlighting-macros)$
+$highlighting-macros$
+%UL 2 Dec 2018 add a bit of white space before and after code blocks
+\renewenvironment{Shaded}
+{
+  \vspace{4pt}%
+  \begin{snugshade}%
+}{%
+  \end{snugshade}%
+  \vspace{4pt}%
+}
+$endif$
+
 \usepackage{import}
 
 % preamble contains title page, signature page, acknowledgement and abstract texts
@@ -10,7 +31,6 @@
 \usepackage[utf8]{inputenc} % Remove warning on ascii conversion
 \usepackage[T1]{fontenc} % Remove warning on ascii conversion
 \usepackage[refsection=part,citestyle=apa,style=authoryear,natbib=true,backend=biber]{biblatex}
-\usepackage{hyperref}
 \usepackage{fancyhdr}
 
 % Make chapter numbers into string words 1 -> ONE
@@ -27,7 +47,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \cfoot{\thepage}
 
-\addbibresource{_bib.bib}
+\addbibresource{$bibliography$}
 
 \begin{document}
 
@@ -60,23 +80,6 @@
  \mainmatter
 
 % OK. Everything is set up. Type your thesis here.
-\include{chapter1/ch1}
-\include{chapter2/ch2}
-\include{chapter3/ch3}
-\include{chapter4/ch4}
-\include{conclusions/conclusion}
-%Appendices
-\include{LatexThesis/Thesis/appendix/_appendix}
-
-% Bibliography
-\begingroup
-    \setlength\bibitemsep{10pt}
-    \linespread{1}\selectfont            
-%    \cleardoupagepage
-    \addcontentsline{toc}{part}{References}
-    \printbibliography[title=References]
-\endgroup
-%\cleardoupagepage
-%\addcontentsline{toc}{part}{References}
+$body$
 
 \end{document}

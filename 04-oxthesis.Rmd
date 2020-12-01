@@ -6,14 +6,8 @@ documentclass: book
 bibliography: references.bib
 ---
 
-```{block type='savequote', include=knitr::is_latex_output(), quote_author='(ref:darwin-quote)'}
-There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.
-
-```
-(ref:darwin-quote) --- Charles Darwin [@Darwin1859]
 
 # Final Notes on The OxThesis template and on collaboration
-\minitoc <!-- this will include a mini table of contents-->
 
 ## Beginning chapters with quotes
 The OxThesis LaTeX template lets you inject some wittiness into your thesis by including a block of type `savequote` at the beginning of chapters. 
@@ -36,7 +30,7 @@ Highlight **short, inline corrections** by doing `[like this]{.correction}` --- 
 Highlight entire **blocks of added or changed material** by putting them in a block of type `correction`, using the syntax ```` ```{block type='correction'} ````.^[In the **.tex** file for PDF output, this will put the content between `\begin{correction}` and `\end{correction}`; in gitbook output it will be put between `<div class="correction">` and `</div>`.]
 Like so:
 
-```{block type='correction'}
+```
 For larger chunks, like this paragraph or indeed entire figures, you can use the `correction` block type. This environment **highlights paragraph-sized and larger blocks** with the same blue colour.
 ```
 

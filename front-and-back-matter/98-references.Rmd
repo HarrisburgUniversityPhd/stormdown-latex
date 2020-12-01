@@ -3,6 +3,11 @@
 `r if(!knitr:::is_latex_output()) '<div id="refs"></div>'`
 
 ```{=latex}
-{\renewcommand*\MakeUppercase[1]{#1}%
-\printbibliography[heading=bibintoc,title=References]}
+\begingroup
+    \setlength\bibitemsep{10pt}
+    \linespread{1}\selectfont            
+%    \cleardoupagepage
+    \addcontentsline{toc}{part}{References}
+    \printbibliography[title=References]
+\endgroup
 ```

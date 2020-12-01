@@ -7,7 +7,6 @@ bibliography: references.bib
 ---
 
 # Adding code {#code}
-\minitoc <!-- this will include a mini table of contents-->
 
 The magic of R Markdown is that we can add code within our document to make it dynamic.
 

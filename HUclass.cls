@@ -479,7 +479,7 @@
     \MakeUppercase{\@degree} \\[\baselineskip]
     \begin{figure}[ht!]
     \begin{center}
-    \includegraphics[height=2cm]{LatexThesis/Thesis/HarrisburgU_Logo.png}
+    \includegraphics[height=2cm]{figures/HarrisburgU_Logo.png}
     \end{center}
     \end{figure}
     \@Department\\

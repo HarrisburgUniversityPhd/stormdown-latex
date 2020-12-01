@@ -79,6 +79,7 @@ _NOTE_: If you've used this template to write your dissertation, drop either [@m
 
 ### PDF output
 
+* open the `stormdown.Rproj` file in RStudio
 * make sure the first section in the `MAKEFILE` is `pdf:`
 * click the `Build > Clean and Rebuild` button
 * the compiled PDF is saved as **docs/_main.pdf**, and the PDF is opened
@@ -88,6 +89,7 @@ _NOTE_: If you've used this template to write your dissertation, drop either [@m
 
 ### Gitbook output
 
+* open the `stormdown.Rproj` file in RStudio
 * make sure the first section in the `MAKEFILE` is `gitbook:`
 * click the `Build > Clean and Rebuild` button
 * the compiled gitbook are stored in the **docs/** folder, and the front page (docs/introduction.html) is opened in a browser
@@ -97,6 +99,7 @@ _NOTE_: If you've used this template to write your dissertation, drop either [@m
 
 ### Word output
 
+* open the `stormdown.Rproj` file in RStudio
 * make sure the first section in the `MAKEFILE` is `word:`
 * click the `Build > Clean and Rebuild` button
 * the compiled MS Word document is saved as **docs/_main.docx** and opened

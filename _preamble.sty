@@ -4,7 +4,8 @@
 \usepackage{amsmath}
 \usepackage{ifpdf}
 
-\ifpdf
+\usepackage{xcolor}
+\ifpdf  
   \usepackage[pdftex]{graphicx}
 \else
   \usepackage[dvips]{graphicx}
@@ -56,8 +57,12 @@
 %
 % To add a bookmark in the pdf you can use \pdfbookmark.  You can look up its usage
 % in the hyperref package documentation
+%UL 15 Oct 2019, enable link highlighting to be turned off from YAML
 \usepackage[bookmarksnumbered,pdfpagelabels=true,plainpages=false,colorlinks=true,
-            linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
+            linkcolor=black,citecolor=black,urlcolor=blue,hidelinks=$hidelinks$]{hyperref}
+
+
+
 
 %   \makepreliminarypages : Makes the preliminary pages
 %   \clearemptydoublepage : same as \cleardoublepage but doesn't put page numbers

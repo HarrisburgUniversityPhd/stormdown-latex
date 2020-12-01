@@ -8,7 +8,6 @@ bibliography: references.bib
 
 # Citations and cross-references {#cites-and-refs} 
 \chaptermark{Cites and cross-refs}
-\minitoc <!-- this will include a mini table of contents-->
 
 ## Citations
 The usual way to include citations in an *R Markdown* document is to put references in a plain text file with the extension **.bib**, in **BibTex** format.[^bib-formats]
