@@ -79,8 +79,8 @@ _NOTE_: If you've used this template to write your dissertation, drop either [@m
 
 ### PDF output
 
-* make sure the first `output` argument is `bookdown::pdf_book`
-* click the `Knit` button
+* make sure the first section in the `MAKEFILE` is `pdf:`
+* click the `Build > Clean and Rebuild` button
 * the compiled PDF is saved as **docs/_main.pdf**, and the PDF is opened
 
 ![](figures/screenshots/build_all.png)
@@ -88,8 +88,8 @@ _NOTE_: If you've used this template to write your dissertation, drop either [@m
 
 ### Gitbook output
 
-* make sure the first `output` argument is `bookdown::gitbook`
-* click the `Knit` button
+* make sure the first section in the `MAKEFILE` is `gitbook:`
+* click the `Build > Clean and Rebuild` button
 * the compiled gitbook are stored in the **docs/** folder, and the front page (docs/introduction.html) is opened in a browser
 
 ![](figures/screenshots/build_gitbook.png)
@@ -97,8 +97,8 @@ _NOTE_: If you've used this template to write your dissertation, drop either [@m
 
 ### Word output
 
-* make sure the first `output` argument is `bookdown::word_document2`
-* click the `Knit` button
+* make sure the first section in the `MAKEFILE` is `word:`
+* click the `Build > Clean and Rebuild` button
 * the compiled MS Word document is saved as **docs/_main.docx** and opened
 
 The Word output has no template behind it, and many things do not work (e.g. image rotation, highlighting corrections).
