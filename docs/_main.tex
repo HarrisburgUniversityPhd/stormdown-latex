@@ -1,5 +1,5 @@
 % Change to 'masters' to produces the masters thesis preliminary pages
-\documentclass[oneside,phd,etd]{HUclass}
+\documentclass[twoside, phd]{HUclass}
 
 % UL 30 Nov 2018 pandoc puts lists in 'tightlist' command when no space between bullet points in Rmd file
 \providecommand{\tightlist}{%
@@ -118,8 +118,7 @@
 
 % OK. Everything is set up. Type your thesis here.
 \hypertarget{introduction}{%
-\chapter*{Introduction}\label{introduction}}
-\addcontentsline{toc}{chapter}{Introduction}
+\chapter{Introduction}\label{introduction}}
 
 Welcome to the \emph{R Markdown} Oxford University thesis template.
 This sample content is adapted from \href{https://github.com/ismayc/thesisdown}{\texttt{thesisdown}} and the formatting of PDF output is adapted from the \href{https://github.com/mcmanigle/OxThesis}{OxThesis LaTeX template}.
@@ -1153,8 +1152,7 @@ In the following code block, the original code is commented out where replaced.
 \end{Shaded}
 
 \hypertarget{conclusion}{%
-\chapter*{Conclusion}\label{conclusion}}
-\addcontentsline{toc}{chapter}{Conclusion}
+\chapter{Conclusion}\label{conclusion}}
 
 If we don't want Conclusion to have a chapter number next to it, we can add the \texttt{\{-\}} attribute.
 \autocite{von_goethe_wilhelm_1829}
