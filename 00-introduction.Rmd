@@ -6,7 +6,7 @@ documentclass: book
 bibliography: references.bib
 ---
 
-# Introduction {-}
+# Introduction
 
 <!-- For PDF output, we must include this LaTeX command after unnumbered headings, otherwise the numbers in the mini table of contents will be incorrect -->
 
