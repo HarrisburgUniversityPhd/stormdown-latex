@@ -7,10 +7,11 @@ title: |
   A Harrisburg University Dissertation \
   Template for R Markdown
 author: Author Name
-date: "`r Sys.Date()`"
-college: Your College
+date:
+  month: "`r format(Sys.Date(), '%B')`"
+  year: "`r format(Sys.Date(), '%Y')`"
+department: Your Program
 degree: Doctor of Philosophy
-degreedate: "`r format(Sys.Date(), '%Y')`"
 abstract: |
   `r paste(readLines("front-and-back-matter/_abstract.Rmd"), collapse = '\n  ')`
 acknowledgements: |

@@ -64,7 +64,6 @@ $endif$
 % be included and point to the correct page.
 \usepackage{makeidx}
 
-
 \makeindex
 
 % The url package allows for the nice typesetting of URLs.  Since URLs are often
@@ -86,9 +85,6 @@ $endif$
 \usepackage[bookmarksnumbered,pdfpagelabels=true,plainpages=false,colorlinks=true,
             linkcolor=black,citecolor=black,urlcolor=blue,hidelinks=$hidelinks$]{hyperref}
 
-
-
-
 %   \makepreliminarypages : Makes the preliminary pages
 %   \clearemptydoublepage : same as \cleardoublepage but doesn't put page numbers
 %                           on blank intervening pages
@@ -104,11 +100,11 @@ $endif$
 % ==================================================== %
 
 % This is the year and month that you submit the thesis
-  \Year{2020}
-  \Month{April}
-  \Author{MV}
+  \Year{$date.year$}
+  \Month{$date.month$}
+  \Author{$author$}
   \University{Harrisburg University of Science and Technology}
-  \Department{Department of Analytics}
+  \Department{$department$}
   \DegreeShort{Ph.D.}
 
 % If you have a long title, split it between two lines. The \TitleBottom field defines the second line
@@ -126,29 +122,24 @@ $endif$
   \DepRepTitle{}
 
 % Acknowledge those who helped and supported you
-  \Acknowledgments{
-My deepest gratitude to Dr. KP for his mentoring, and to my committee members: Dr. RS, Dr. RF, and Dr. KH.
-
+\Acknowledgments{
+  $acknowledgements$
 }
-
 
 % The text of your abstract
 % Known bugs
 %   Having a tiny bit of the abstract spill to second page defeats page number removal.
 %   Workaround: make the abstract a little longer or a little shorter.
 %
-  \Abstract{
-   
-  
-
+\Abstract{
+  $abstract$
 }
 
 % The text of your dedication
 % This page is OPTIONAL. To remove, comment out \dedicationpage in _thesis.tex
-  \Dedication{
-    To my family
+\Dedication{
+  $dedication$
 }
-
 
 % The members of your graduate committee
   \MemberA{RF}

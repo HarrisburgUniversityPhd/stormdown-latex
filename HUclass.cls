@@ -154,9 +154,6 @@
   \TitleTop{First line of title}
   \TitleMiddle{ }
   \TitleBottom{ } % default is empty
-  \Acknowledgments{Acknowledgment text goes here.}
-  \Abstract{Abstract text goes here.}
-  \degree{Bachelor of Science}
   \docname{phd thesis}
   \Advisor{Kevin Purcell Ph.D.}
   \AdvisorTitle{Ph.D.}
