@@ -1,19 +1,10 @@
-% Revision: 08-01-2020
 % Revision History
-%   08-01-2020 : Initial version
+%   2020-12-02 : MAN remove cruft from things we don't target
+%   2020-08-01 : Initial version
 %
 % Known bugs
 %   Having a tiny bit of the abstract spill to second page defeats page number removal.
 %   Workaround: make the abstract a little longer or a little shorter.
-%
-% You can supply
-% the following optional arguments in the square brackets to
-% specify the thesis type:
-%
-%   senior  : Produces the senior thesis preliminary pages (default)
-%   honors  : Produces the honors thesis preliminary pages
-%   masters : Produces the masters thesis preliminary pages
-%   phd     : Produces the PhD dissertation preliminary pages
 %
 % The default format is appropriate for printing, with blank pages
 % inserted after the preliminary pages in twoside mode so you can
@@ -47,8 +38,7 @@
 % construction of the preliminary pages
 
 % Fix?
-\newcommand{\cedp}{\newpage{\pagestyle{empty}
-\cleardoublepage}}
+\newcommand{\cedp}{\newpage{\pagestyle{empty}\cleardoublepage}}
 
 % The year and month the degree is awarded
 \newcommand{\Year}[1]{\gdef\@Year{#1}}
@@ -59,9 +49,6 @@
 
 % The full name of the degree
 \newcommand{\DegreeShort}[1]{\gdef\@DegreeShort{#1}}
-
-% The name of this document (thesis/dissertation)
-\newcommand{\docname}[1]{\gdef\@docname{#1}}
 
 % First line of title
 \newcommand{\TitleTop}[1]{\gdef\@TitleTop{\mbox{#1}}}
@@ -133,44 +120,35 @@
 % The title of the department chair (allow for associate chair, etc.)
 \newcommand{\DepRepTitle}[1]{\gdef\@DepRepTitle{#1}}
 
-% The name of the department undergraduate coordinator
-\newcommand{\UgradCoord}[1]{\gdef\@UgradCoord{#1}}
-
 % The name of the dean
 \newcommand{\Dean}[1]{\gdef\@Dean{#1}}
 
 % The title of the dean
 \newcommand{\DeanTitle}[1]{\gdef\@DeanTitle{#1}}
 
-% The name of the honors dean
-\newcommand{\HonorsDean}[1]{\gdef\@HonorsDean{#1}}
-
 % Set default values for fields
-  \Year{1905}
-  \Month{January}
-  \Author{Author}
-  \University{University}
-  \Department{Department}
-  \TitleTop{First line of title}
-  \TitleMiddle{ }
-  \TitleBottom{ } % default is empty
-  \docname{phd thesis}
-  \Advisor{Kevin Purcell Ph.D.}
-  \AdvisorTitle{Ph.D.}
-  \MemberA{Rand Ford}
-  \MemberATitle{Ph.D.}
-  \MemberB{Kevin Huggins}
-  \MemberBTitle{Ph.D.}
-  \MemberC{Roozbeh Sadeghian}
-  \MemberCTitle{Ph.D.}
-  \MemberD{Glenn Mitchell}
-  \MemberDTitle{MD}
-  \DepRep{Rand Ford, Ph.D.}
-  \DepRepTitle{Chair}
-  \Dean{Bilita Mattes, D.Ed}
-  \DeanTitle{Provost}
-  \HonorsDean{Honors Dean Name}
-  \UgradCoord{Department Ugrad Coordinator }
+\Year{-unset-}
+\Month{-unset-}
+\Author{-unset-}
+\University{Harrisburg University of Science and Technology}
+\Department{-unset-}
+\TitleTop{First line of title}
+\TitleMiddle{ }
+\TitleBottom{ } % default is empty
+\Advisor{Kevin Purcell Ph.D.}
+\AdvisorTitle{Ph.D.}
+\MemberA{Rand Ford}
+\MemberATitle{Ph.D.}
+\MemberB{Kevin Huggins}
+\MemberBTitle{Ph.D.}
+\MemberC{Roozbeh Sadeghian}
+\MemberCTitle{Ph.D.}
+\MemberD{Glenn Mitchell}
+\MemberDTitle{MD}
+\DepRep{Rand Ford, Ph.D.}
+\DepRepTitle{Chair}
+\Dean{Bilita Mattes, D.Ed}
+\DeanTitle{Provost}
 
 % ---------------------------- options ------------------------------
 
@@ -206,67 +184,20 @@
     \ch@ngetext%
 }
 
-% Define the preliminary section for a senior thesis.
-% The senior option is essentially ignored since it is the default
-  \newcommand{\makepreliminarypages}{
-    \preliminarymargins
-    \titlepage
-    \abstractpage
-    \copyrightpage
-    \seniorapprovalpage
-    \acceptancepage
-    \acknowledgmentspage
-    \fixmargins
-    \renewcommand{\clearemptydoublepage}{\cle@remptydoublep@ge}
-  }
-
-% Define the honors thesis preliminary section if the 'honors' option is specified
-\DeclareOption{honors}{
-  \renewcommand{\makepreliminarypages}{
-    \preliminarymargins
-    \honorstitlepage
-    \copyrightpage
-    \seniorapprovalpage
-    \acknowledgmentspage
-    \abstractpage
-    \fixmargins
-    \renewcommand{\clearemptydoublepage}{\cle@remptydoublep@ge}
-  }
+\degree{Doctor of Philosophy}
+\newcommand{\makepreliminarypages}{
+  \preliminarymargins
+  \titlepage
+  \copyrightpage
+  \abstractpage
+  \dedicationpage
+  \phdapprovalpage
+  \acceptancepage
+  \acknowledgmentspage
+  \fixmargins
+  \renewcommand{\clearemptydoublepage}{\cle@remptydoublep@ge}
 }
 
-% Changes to masters thesis preliminary section if the 'masters' option is specified
-\DeclareOption{masters}{
-  \degree{Master of Science}
-  \docname{master}
-  \renewcommand{\makepreliminarypages}{
-    \preliminarymargins
-    \titlepage
-    \copyrightpage
-    \masterapprovalpage
-    \acknowledgmentspage
-    \abstractpage
-    \fixmargins
-    \renewcommand{\clearemptydoublepage}{\cle@remptydoublep@ge}
-  }
-}
-
-% Changes to PhD preliminary section if the 'phd' option is specified
-\DeclareOption{phd}{
-  \degree{Doctor of Philosophy}
-  \docname{thesis}
-  \renewcommand{\makepreliminarypages}{
-    \preliminarymargins
-    \titlepage
-    \copyrightpage
-    \abstractpage
-    \dedicationpage
-    \phdapprovalpage
-    \acceptancepage
-    \acknowledgmentspage
-    \fixmargins
-    \renewcommand{\clearemptydoublepage}{\cle@remptydoublep@ge}
-    }
-}
 
 % --------------------- Some commands to handle the single sided preliminary pages ------------------
 
@@ -470,9 +401,9 @@
     By\\[\baselineskip]
     \textsc{\Large{\@Author}}
     \vfill
-    A \@docname~submitted to\\
-    Harrisburg University of Science and Technology\\
-    for the  degree of\\
+    A dissertation submitted to\\
+    \@University\\
+    for the degree of\\
     \MakeUppercase{\@degree} \\[\baselineskip]
     \begin{figure}[ht!]
     \begin{center}
@@ -485,39 +416,6 @@
     %\copyright\ Copyright by \MakeUppercase{\@Author},~\@Year\\
     %All Rights Reserved
     \end{center}
-    \clearpage
-    }
-
-% ========================== Aligned Title Page ===========================
-\newcommand{\alignedtitlepage}{
-    \thispagestyle{empty}
-    %\begin{center}
-    \providecommand\pdfbookmark[3][]{} \pdfbookmark[0]{Title Page}{bm:Title}
-    \vspace*{1cm}
-    \begin{figure}[ht!]
-    \includegraphics[height=2cm]{HU.png}
-    \end{figure}
-    \vfill
-    \begin{flushleft}
-    \textsc{\huge{\@TitleTop}}\\[\baselineskip]
-    \textsc{\huge{\@TitleMiddle}}\\[\baselineskip]
-    \textsc{\huge{\@TitleBottom}}\\
-    \vfill
-    By\\[\baselineskip]
-    \textsc{\Large{\@Author}}
-    \vfill
-    A \@docname~submitted to\\
-    Harrisburg University of Science and Technology\\
-    for the  degree of\\
-    \MakeUppercase{\@degree} \\[\baselineskip]
-    \end{flushleft}
-    \begin{flushright}
-    \@Department\\
-    \@University\\
-    \@Month~\@Year \\[\baselineskip]
-    \end{flushright}
-    %\copyright\ Copyright by \MakeUppercase{\@Author},~\@Year\\
-    %All Rights Reserved
     \clearpage
     }
 
@@ -562,7 +460,7 @@
     \textbf{Ph.D. COMMITTEE APPROVAL}\\[3\baselineskip]
     \end{center}
     \noindent
-    To the Faculty of Harrisburg University of Science and Technology:
+    To the Faculty of \@University:
     \par\doublespace The members of the Committee appointed to examine the dissertation
 of \MakeUppercase{\@Author} find it satisfactory and recommend that it be accepted.\\[\baselineskip]
     \par\singlespace
@@ -575,45 +473,6 @@ of \MakeUppercase{\@Author} find it satisfactory and recommend that it be accept
     \clearemptydoublepage
   }
 
-% \newcommand{\masterapprovalpage}{
-%     \thispagestyle{plain}
-%     \begin{center}
-%     \providecommand\pdfbookmark[3][]{} \pdfbookmark[0]{Graduate Committee Approval}{bm:ComAp}
-%     \vspace*{0.375in}
-%     \end{center}
-%     \noindent
-%     To the Faculty of Harrisburg University of Science and Technology:
-%     \par\doublespace The members of the Committee appointed to examine the thesis
-% of \MakeUppercase{\@Author} find it satisfactory and recommend that it be accepted.\\[\baselineskip]
-%     \par\singlespace
-%     \datebox\hfill\signaturebox{\@Advisor, \@AdvisorTitle, Chair}\\
-%     \datebox\hfill\signaturebox{\@MemberA, \@MemberATitle}\\
-%     \datebox\hfill\signaturebox{\@MemberB, \@MemberBTitle}\\
-%     \vfill
-%     \clearemptydoublepage
-%   }
-
-% \newcommand{\seniorapprovalpage}{
-%     \thispagestyle{empty}
-%     \begin{center}
-%     \providecommand\pdfbookmark[3][]{} \pdfbookmark[0]{Department Approval}{bm:DepAp}
-%     \vspace*{0.375in}
-%     Harrisburg University of Science and Technology\\[3\baselineskip]
-%     DEPARTMENT APPROVAL\\[5\baselineskip]
-%     of a \@docname~submitted by\\[\baselineskip]
-%     \@Author\\[2\baselineskip]
-%     \end{center}
-%     \noindent
-%     This thesis has been reviewed by the research advisor,
-%     research coordinator, and department chair and has been
-%     found to be satisfactory.\\[\baselineskip]
-%     \datebox\hfill\signaturebox{\@Advisor, Advisor}\\
-%     \datebox\hfill\signaturebox{\@UgradCoord, Research Coordinator}\\
-%     \datebox\hfill\signaturebox{\@DepRep, \@DepRepTitle}\\
-%     \vfill
-%     \clearemptydoublepage
-%   }
-
 % ======================= Acceptance Page ============================
 \newcommand{\acceptancepage}{
     \thispagestyle{empty}%
@@ -621,11 +480,11 @@ of \MakeUppercase{\@Author} find it satisfactory and recommend that it be accept
     \providecommand\pdfbookmark[3][]{} \pdfbookmark[0]{Acceptance Page}{bm:Accept}
     \vspace*{0.375in}
     \textbf{ACCEPTANCE PAGE}\\[2\baselineskip]
-    Harrisburg University of Science and Technology\\[3\baselineskip]
+    \@University\\[3\baselineskip]
     \end{center}%
     \noindent%
     As chair of the candidate's graduate committee, I have read the
-    \@docname\ of \@Author \ in its final form and have found
+    dissertation of \@Author \ in its final form and have found
     that (1) its format, citations, and bibliographical style are
     consistent and acceptable and fulfill university and department
     style requirements; (2) its illustrative materials including
@@ -633,14 +492,14 @@ of \MakeUppercase{\@Author} find it satisfactory and recommend that it be accept
     manuscript is satisfactory to the graduate committee
     and is ready for submission to the university library.\\[2\baselineskip]
     \datebox\hfill\signaturebox{\@Advisor, \@AdvisorTitle\\Chair, Graduate Committee\\
-    Harrisburg University of Science and Technology} 
+    \@University} 
     \vskip 0pt plus 2fill
     \noindent Accepted for the Department of Analytics\par\hfill
     \signaturebox{\@MemberA, \@MemberATitle\\Chair, Department of Analytics\\
-    Harrisburg University of Science and Technology} 
+    \@University} 
     \vfill \noindent Accepted for the University\par\hfill
     \signaturebox{\@Dean, \\ \@DeanTitle \\
-    Harrisburg University of Science and Technology}
+    \@University}
     \clearemptydoublepage
   }
   
