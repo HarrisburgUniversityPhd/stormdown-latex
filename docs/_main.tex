@@ -61,8 +61,148 @@
 
 \usepackage{import}
 
-% preamble contains title page, signature page, acknowledgement and abstract texts
-\usepackage{_preamble}
+% ==================================================== % ==================================================== %
+
+\usepackage{amsmath}
+\usepackage{ifpdf}
+
+\usepackage{xcolor}
+\ifpdf  
+  \usepackage[pdftex]{graphicx}
+\else
+  \usepackage[dvips]{graphicx}
+\fi
+
+\usepackage{afterpage}
+\usepackage{rotating}
+%\usepackage{subfigure}
+% Change the CLASS FILE from HUclass to bookbinding (and edit class file names accordingly) after your thesis is turned in electronically so you can get your dissertation bound and don't forget to change the above from oneside to twoside!!!!!!!!!!!!!!
+\usepackage{fancyhdr}
+  \fancyfoot[C,CO]{\textbf{\thepage}}
+  \pagestyle{plain}
+  \renewcommand{\chaptermark}[1]{\markboth{\chaptername \ \thechapter \ \ #1}{}}
+  \renewcommand{\sectionmark}[1]{\markright{\thesection \ \ #1}}
+
+% The caption package allows us to change the formatting of figure captions.
+% The commands here change to the suggested caption format: single spaced and a bold tag
+\usepackage[margin=0.3in,labelfont=bf,labelsep=none]{caption}
+ \DeclareCaptionFormat{suggested}{\singlespace#1#2 #3\par\doublespace}
+ \captionsetup{format=suggested}
+
+% The cite package cleans up the way citations are handled.  For example, it
+% changes the citation [1,2,3,6,7,8,9,10,11] into [1-3,6-11].  If your advisor
+% wants superscript citations, use the overcite package instead of the cite package.
+%\usepackage{cite}
+
+% The makeidx package makes your index for you.  To make an index entry,
+% go to the place in the book that should be referenced and type
+%  \index{key}
+% An index entry labeled "key" (or whatever you type) will then
+% be included and point to the correct page.
+\usepackage{makeidx}
+
+\makeindex
+
+% The url package allows for the nice typesetting of URLs.  Since URLs are often
+% long with no spaces, they mess up line wrapping.  The command \url{http://www.physics.byu.edu}
+% allows LaTeX to break the url across lines at appropriate places: e.g. http://www.physics.byu.edu
+\usepackage{url}
+\urlstyle{rm}
+
+% The hyperref package provides automatic linking and bookmarking for the table
+% of contents, index, equation references, and figure references.
+%
+% To include a link in your pdf use \href{URL}{Text to be displayed}.  If your
+% display text is the URL, you probably should use the \url{} command discussed
+% above.
+%
+% To add a bookmark in the pdf you can use \pdfbookmark.  You can look up its usage
+% in the hyperref package documentation
+%UL 15 Oct 2019, enable link highlighting to be turned off from YAML
+\usepackage[bookmarksnumbered,pdfpagelabels=true,plainpages=false,colorlinks=true,
+            linkcolor=black,citecolor=black,urlcolor=blue,hidelinks=true]{hyperref}
+
+%   \makepreliminarypages : Makes the preliminary pages
+%   \clearemptydoublepage : same as \cleardoublepage but doesn't put page numbers
+%                           on blank intervening pages
+%   \singlespace          : switch to single spaced lines
+%   \doublespace          : switch to double spaced lines
+\newcommand{\bibs}{DissertationRefs}
+\newcommand{\comments}[1]{}
+
+% ==================================================== %
+%                                                      %
+%   Fill in these fields for the preliminary pages     %
+%                                                      %
+% ==================================================== %
+
+% This is the year and month that you submit the thesis
+  \Year{2020}
+  \Month{December}
+  \Author{Author Name}
+  \University{Harrisburg University of Science and Technology}
+  \Department{Your Program}
+  \DegreeShort{Ph.D.}
+
+% If you have a long title, split it between two lines. The \TitleBottom field defines the second line
+% A two line title should be an "inverted pyramid" with the top line longer than the bottom.
+\TitleTop{Graph Neural Networks - DRAFT}
+\TitleMiddle{Learning Graph Embeddings for Link Prediction and Node Classification}
+\TitleBottom{Through HyperGraph Convolutions, Markovian Networks, and Variational Inference}
+
+% Your research advisor
+  \Advisor{K P}
+  \AdvisorTitle{Ph.D.}
+
+% The representative of the department who will approve your thesis (usually the chair) 
+  \DepRep{}
+  \DepRepTitle{}
+
+% Acknowledge those who helped and supported you
+\Acknowledgments{
+  This is where you will normally thank your advisor, colleagues, family and friends, as well as funding and institutional support. In our case, we will give our praises to the people who developed the ideas and tools that allow us to push open science a little step forward by writing plain-text, transparent, and reproducible theses in R Markdown.
+  
+  We must be grateful to John Gruber for inventing the original version of Markdown, to John MacFarlane for creating Pandoc (\url{http://pandoc.org}) which converts Markdown to a large number of output formats, and to Yihui Xie for creating \texttt{knitr} which introduced R Markdown as a way of embedding code in Markdown documents, and \texttt{bookdown} which added tools for technical and longer-form writing.
+  
+  Special thanks to \href{http://chester.rbind.io}{Chester Ismay}, who created the \texttt{thesisdown} package that helped many a PhD student write their theses in R Markdown. And a very special tahnks to John McManigle, whose adaption of Sam Evans' adaptation of Keith Gillow's original maths template for writing an Oxford University DPhil thesis in \LaTeX~provided the template that I adapted for R Markdown.
+  
+  Finally, profuse thanks to JJ Allaire, the founder and CEO of \href{http://rstudio.com}{RStudio}, and Hadley Wickham, the mastermind of the tidyverse without whom we'd all just given up and done data science in Python instead. Thanks for making data science easier, more accessible, and more fun for us all.
+  
+  \begin{flushright}
+  Ulrik Lyngs \\
+  Linacre College, Oxford \\
+  2 December 2018
+  \end{flushright}
+}
+
+% The text of your abstract
+% Known bugs
+%   Having a tiny bit of the abstract spill to second page defeats page number removal.
+%   Workaround: make the abstract a little longer or a little shorter.
+%
+\Abstract{
+  This \emph{R Markdown} template is for writing an Oxford University thesis. The template is built using Yihui Xie's \texttt{bookdown} package, with heavy inspiration from Chester Ismay's \texttt{thesisdown} and the \texttt{OxThesis} \LaTeX~template (most recently adapted by John McManigle).
+  
+  This template's sample content include illustrations of how to write a thesis in R Markdown, and largely follows the structure from \href{https://ulyngs.github.io/rmarkdown-workshop-2019/}{this R Markdown workshop}.
+  
+  Congratulations for taking a step further into the lands of open, reproducible science by writing your thesis using a tool that allows you to transparently include tables and dynamically generated plots directly from the underlying data. Hip hooray!
+}
+
+% The text of your dedication
+% This page is OPTIONAL. To remove, comment out \dedicationpage in _thesis.tex
+\Dedication{
+  For Yihui Xie
+}
+
+% The members of your graduate committee
+  \MemberA{RF}
+  \MemberATitle{Ph.D.}
+  \MemberB{RS}
+  \MemberBTitle{Ph.D.}
+  \MemberC{KS}
+  \MemberCTitle{Ph.D.}
+
+% ==================================================== % ==================================================== %
 
 % Packages used
 \usepackage[utf8]{inputenc} % Remove warning on ascii conversion
@@ -433,21 +573,21 @@ library(tidyverse)
 \hypertarget{including-images}{%
 \subsection{Including images}\label{including-images}}
 
-Code chunks are also used for including images, with \texttt{include\_graphics} from the \texttt{knitr} package, as in Figure \ref{fig:oxford-logo}
+Code chunks are also used for including images, with \texttt{include\_graphics} from the \texttt{knitr} package, as in Figure \ref{fig:HarrisburgU-logo}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{"figures/beltcrest.png"}\NormalTok{)}
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{"figures/HarrisburgU_Logo.png"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth]{figures/beltcrest} 
+{\centering \includegraphics[width=0.5\linewidth]{figures/HarrisburgU_Logo} 
 
 }
 
-\caption{Oxford logo}\label{fig:oxford-logo}
+\caption{HarrisburgU logo}\label{fig:HarrisburgU-logo}
 \end{figure}
 
 Useful chunk options for figures include:
@@ -482,11 +622,11 @@ Then you can reference that variable as the value of \texttt{out.extra} to rotat
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.5\linewidth,angle=180]{figures/beltcrest} 
+{\centering \includegraphics[width=0.5\linewidth,angle=180]{figures/HarrisburgU_Logo} 
 
 }
 
-\caption{Oxford logo, rotated}\label{fig:oxford-logo-rotated}
+\caption{HarrisburgU logo, rotated}\label{fig:HarrisburgU-logo-rotated}
 \end{figure}
 
 \hypertarget{including-plots}{%
@@ -889,13 +1029,13 @@ For example, this chapter's running header is simply `Cites and cross-refs', bec
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{final-notes-on-the-oxthesis-template-and-on-collaboration}{%
-\chapter{Final Notes on The OxThesis template and on collaboration}\label{final-notes-on-the-oxthesis-template-and-on-collaboration}}
+\hypertarget{final-notes-on-the-huthesis-template-and-on-collaboration}{%
+\chapter{Final Notes on The HUThesis template and on collaboration}\label{final-notes-on-the-huthesis-template-and-on-collaboration}}
 
 \hypertarget{beginning-chapters-with-quotes}{%
 \section{Beginning chapters with quotes}\label{beginning-chapters-with-quotes}}
 
-The OxThesis LaTeX template lets you inject some wittiness into your thesis by including a block of type \texttt{savequote} at the beginning of chapters.
+The HUThesis LaTeX template lets you inject some wittiness into your thesis by including a block of type \texttt{savequote} at the beginning of chapters.
 To do this, use the syntax \texttt{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{block\ type=\textquotesingle{}savequote\textquotesingle{}\}}.\footnote{For more on custom block types, see the relevant section in \href{https://bookdown.org/yihui/bookdown/custom-blocks.html}{\emph{Authoring Books with R Markdown}}.}
 
 Add the reference for the quote with the chunk option \texttt{quote\_author="my\ author\ name"}.
@@ -1188,12 +1328,6 @@ This first appendix includes an R chunk that was hidden in the document (using \
 \end{Shaded}
 
 \textbf{And here's another one from the same chapter, i.e.~Chapter \ref{code}:}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{"figures/beltcrest.png"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
 
 \hypertarget{the-second-appendix-for-fun}{%
 \chapter{The Second Appendix, for Fun}\label{the-second-appendix-for-fun}}

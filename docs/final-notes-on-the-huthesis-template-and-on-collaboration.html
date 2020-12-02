@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A The First Appendix | stormdown: A Harrisburg University Dissertation Template for R Markdown</title>
+  <title>5 Final Notes on The HUThesis template and on collaboration | stormdown: A Harrisburg University Dissertation Template for R Markdown</title>
   <meta name="description" content="stormdown:<br />
 A Harrisburg University Dissertation<br />
 Template for R Markdown</p>" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A The First Appendix | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
+  <meta property="og:title" content="5 Final Notes on The HUThesis template and on collaboration | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/HarrisburgUniversityPhd/stormdown" />
   
@@ -18,7 +18,7 @@ Template for R Markdown</p>" />
   <meta name="github-repo" content="HarrisburgUniversityPhd/stormdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A The First Appendix | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
+  <meta name="twitter:title" content="5 Final Notes on The HUThesis template and on collaboration | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
   
   
   
@@ -33,8 +33,8 @@ Template for R Markdown</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="references.html"/>
-<link rel="next" href="the-second-appendix-for-fun.html"/>
+<link rel="prev" href="cites-and-refs.html"/>
+<link rel="next" href="customisations-and-extensions.html"/>
 <style type="text/css">
 p.abstract{
   text-align: center;
@@ -240,21 +240,68 @@ Template for R Markdown</p></a>
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="the-first-appendix" class="section level1">
-<h1><span class="header-section-number">A</span> The First Appendix</h1>
-<p>This first appendix includes an R chunk that was hidden in the document (using <code>echo = FALSE</code>) to help with readibility:</p>
-<p><strong>In 02-rmd-basics-code.Rmd</strong></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="the-first-appendix.html#cb20-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb20-2"><a href="the-first-appendix.html#cb20-2"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figures/chunk-parts.png&quot;</span>)</span></code></pre></div>
-<p><strong>And here’s another one from the same chapter, i.e. Chapter <a href="code.html#code">3</a>:</strong></p>
+<div id="final-notes-on-the-huthesis-template-and-on-collaboration" class="section level1">
+<h1><span class="header-section-number">5</span> Final Notes on The HUThesis template and on collaboration</h1>
+<div id="beginning-chapters-with-quotes" class="section level2">
+<h2><span class="header-section-number">5.1</span> Beginning chapters with quotes</h2>
+<p>The HUThesis LaTeX template lets you inject some wittiness into your thesis by including a block of type <code>savequote</code> at the beginning of chapters.
+To do this, use the syntax <code>```{block type='savequote'}</code>.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
+<p>Add the reference for the quote with the chunk option <code>quote_author="my author name"</code>.
+You will also want to add the chunk option <code>include=knitr::is_latex_output()</code> so that quotes are only included in PDF output.</p>
+<p>It’s not possible to use markdown syntax inside chunk options, so if you want to e.g. italicise a book name in the reference use a <a href="https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#text-references">‘text reference’</a>: Create a named piece of text with ‘(ref:label-name) My text’, then point to this in the chunk option with <code>quote_author='(ref:label-name)'</code>.</p>
+</div>
+<div id="highlighting-corrections" class="section level2">
+<h2><span class="header-section-number">5.2</span> Highlighting corrections</h2>
+<p>For when it comes time to do corrections, you may want to highlight changes made when you submit a post-viva, corrected copy to your examiners so they can quickly verify you’ve completed the task.
+You can do so like this:</p>
+<div id="short-inline-corrections" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Short, inline corrections</h3>
+<p>Highlight <strong>short, inline corrections</strong> by doing <code>[like this]{.correction}</code> — the text between the square brackets will then <span class="correction">be highlighted in blue</span> in the output.</p>
+</div>
+<div id="blocks-of-added-or-changed-material" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Blocks of added or changed material</h3>
+<p>Highlight entire <strong>blocks of added or changed material</strong> by putting them in a block of type <code>correction</code>, using the syntax <code>```{block type='correction'}</code>.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>
+Like so:</p>
+<pre><code>For larger chunks, like this paragraph or indeed entire figures, you can use the `correction` block type. This environment **highlights paragraph-sized and larger blocks** with the same blue colour.</code></pre>
+</div>
+<div id="stopping-corrections-from-being-highlighted-in-the-output" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Stopping corrections from being highlighted in the output</h3>
+<p>For <strong>PDF</strong> output, go to <strong>index.Rmd</strong> and (i) set <code>corrections: false</code> under <code>params</code> in the YAML header (stops block of corrections from being highlighted), (ii) comment out <code>pandoc_args: ["--lua-filter=scripts_and_filters/correction_filter.lua"]</code> (stops inline corrections from being highlighted).</p>
+<p>For <strong>gitbook</strong> output, go to <strong>style.css</strong> and comment out the styling for <code>.correction</code>.</p>
+</div>
+</div>
+<div id="diving-in-to-the-oxthesis-latex-template" class="section level2">
+<h2><span class="header-section-number">5.3</span> Diving in to the OxThesis LaTeX template</h2>
+<p>For LaTeX minded people, you can read through <strong>templates/template.tex</strong> to see which additional customisation options are available as well as <strong>templates/ociamthesis.cls</strong> which supplies the base class.
+For example, <strong>template.tex</strong> provides an option for master’s degree submissions, which changes identifying information to candidate number and includes a word count.
+At the time of writing, you must set this directly in <strong>template.tex</strong> rather than from the YAML header in <strong>index.Rmd</strong>.</p>
+</div>
+<div id="collaborative-writing" class="section level2">
+<h2><span class="header-section-number">5.4</span> Collaborative writing</h2>
+<p>Best practices for collaboration and change tracking when using R Markdown are still an open question.
+In the blog post <a href="https://livefreeordichotomize.com/2018/09/14/one-year-to-dissertate/"><strong>One year to dissertate</strong></a> by Lucy D’Agostino, which I highly recommend, the author notes that she knits .Rmd files to a <code>word_document</code>, then uses the <code>googledrive</code> R package to send this to Google Drive for comments / revisions from co-authors, then incorporates Google Drive suggestions <em>by hand</em> into the .Rmd source files.
+This is a bit clunky, and there are ongoing discussions among the <em>R Markdown</em> developers about what the best way is to handle collaborative writing (see <a href="https://github.com/rstudio/rmarkdown/issues/1463">issue #1463</a> on GitHub, where <a href="http://criticmarkup.com">CriticMarkup</a> is among the suggestions).</p>
+<p>For now, this is an open question in the community of R Markdown users.
+I often knit to a format that can easily be imported to Google Docs for comments, then go over suggested revisions and manually incorporate them back in to the .Rmd source files.
+For articles, I sometimes upload a near-final draft to <a href="https://www.overleaf.com/">Overleaf</a>, then collaboratively make final edits to the  file there.
+I suspect some great solution will be developed in the not-to-distant future, probably by the RStudio team.</p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>For more on custom block types, see the relevant section in <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html"><em>Authoring Books with R Markdown</em></a>.<a href="final-notes-on-the-huthesis-template-and-on-collaboration.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>In the <strong>.tex</strong> file for PDF output, this will put the content between <code>\begin{correction}</code> and <code>\end{correction}</code>; in gitbook output it will be put between <code>&lt;div class="correction"&gt;</code> and <code>&lt;/div&gt;</code>.<a href="final-notes-on-the-huthesis-template-and-on-collaboration.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="references.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="the-second-appendix-for-fun.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="cites-and-refs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="customisations-and-extensions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -285,7 +332,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ulyngs/oxforddown/tree/master/front-and-back-matter/99-appendices.Rmd",
+"link": "https://github.com/ulyngs/oxforddown/tree/master/04-oxthesis.Rmd",
 "text": "Edit"
 },
 "history": {
