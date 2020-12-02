@@ -7,7 +7,8 @@ title: |
   A Harrisburg University Dissertation \
   Template for R Markdown
 author: Author Name
-date:
+date: "`r Sys.Date()`"
+date2:
   month: "`r format(Sys.Date(), '%B')`"
   year: "`r format(Sys.Date(), '%Y')`"
 department: Your Program
