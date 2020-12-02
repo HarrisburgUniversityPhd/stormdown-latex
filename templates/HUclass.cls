@@ -30,7 +30,7 @@
 %
 % ------------------------------------------------------------------------------------------------------
 %
-\NeedsTeXFormat{LaTeX2e} \ProvidesClass{HUclass}
+\NeedsTeXFormat{LaTeX2e} \ProvidesClass{templates/HUclass}
 
 % ---------------------------- declarations -------------------------
 %
