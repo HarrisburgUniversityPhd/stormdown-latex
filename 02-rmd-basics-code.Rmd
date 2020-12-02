@@ -46,10 +46,10 @@ library(tidyverse)
 
 
 ### Including images
-Code chunks are also used for including images, with `include_graphics` from the `knitr` package, as in Figure \@ref(fig:oxford-logo)
+Code chunks are also used for including images, with `include_graphics` from the `knitr` package, as in Figure \@ref(fig:HarrisburgU-logo)
 
-```{r oxford-logo, fig.cap="Oxford logo", out.width='50%', fig.align='center'}
-knitr::include_graphics("figures/beltcrest.png")
+```{r HarrisburgU-logo, fig.cap="HarrisburgU logo", out.width='50%', fig.align='center'}
+knitr::include_graphics("figures/HarrisburgU_Logo.png")
 ```
 
 Useful chunk options for figures include:
@@ -72,8 +72,8 @@ if (knitr::opts_knit$get('rmarkdown.pandoc.to') == 'latex'){
 
 Then you can reference that variable as the value of `out.extra` to rotate images, as in Figure \@ref(fig:oxford-logo-rotated).
 
-```{r oxford-logo-rotated, out.extra=rotate180, fig.cap="Oxford logo, rotated", out.width='50%', fig.align='center', echo=FALSE}
-knitr::include_graphics("figures/beltcrest.png")
+```{r HarrisburgU-logo-rotated, out.extra=rotate180, fig.cap="HarrisburgU logo, rotated", out.width='50%', fig.align='center', echo=FALSE}
+knitr::include_graphics("figures/HarrisburgU_Logo.png")
 ```
 
 
