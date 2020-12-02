@@ -7,10 +7,10 @@ bibliography: references.bib
 ---
 
 
-# Final Notes on The OxThesis template and on collaboration
+# Final Notes on The HUThesis template and on collaboration
 
 ## Beginning chapters with quotes
-The OxThesis LaTeX template lets you inject some wittiness into your thesis by including a block of type `savequote` at the beginning of chapters. 
+The HUThesis LaTeX template lets you inject some wittiness into your thesis by including a block of type `savequote` at the beginning of chapters. 
 To do this, use the syntax ```` ```{block type='savequote'} ````.^[For more on custom block types, see the relevant section in [_Authoring Books with R Markdown_](https://bookdown.org/yihui/bookdown/custom-blocks.html).]
 
 Add the reference for the quote with the chunk option `quote_author="my author name"`. 
