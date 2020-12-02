@@ -139,22 +139,23 @@
   \Year{2020}
   \Month{December}
   \Author{Author Name}
-  \Department{Your Program}
+  \Department{Department of Analytics}
   \DegreeShort{Ph.D.}
+  \University{Harrisburg University of Science and Technology}
 
 % If you have a long title, split it between two lines. The \TitleBottom field defines the second line
 % A two line title should be an "inverted pyramid" with the top line longer than the bottom.
-\TitleTop{Graph Neural Networks - DRAFT}
-\TitleMiddle{Learning Graph Embeddings for Link Prediction and Node Classification}
-\TitleBottom{Through HyperGraph Convolutions, Markovian Networks, and Variational Inference}
+\TitleTop{Stromdown}
+\TitleMiddle{A Harrisburg University Dissertation}
+\TitleBottom{Template using R Markdown}
 
 % Your research advisor
-  \Advisor{K P}
+  \Advisor{Your Advisor}
   \AdvisorTitle{Ph.D.}
 
 % The representative of the department who will approve your thesis (usually the chair) 
-  \DepRep{}
-  \DepRepTitle{}
+  \DepRep{Rand Ford, Ph.D.}
+  \Dean{Bilita Mattes, D.Ed.}
 
 % Acknowledge those who helped and supported you
 \Acknowledgments{
@@ -193,12 +194,14 @@
 }
 
 % The members of your graduate committee
-  \MemberA{RF}
-  \MemberATitle{Ph.D.}
-  \MemberB{RS}
-  \MemberBTitle{Ph.D.}
-  \MemberC{KS}
-  \MemberCTitle{Ph.D.}
+\MemberA{Member A}
+\MemberATitle{Ph.D.}
+\MemberB{Member B}
+\MemberBTitle{Ph.D.}
+\MemberC{Member C}
+\MemberCTitle{Ph.D.}
+\MemberD{Member D}
+\MemberDTitle{Ph.D.}
 
 % ==================================================== % ==================================================== %
 
@@ -1150,7 +1153,7 @@ However, note that this approach does not support chapter bibliographies (see Se
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{csl}\KeywordTok{:}\AttributeTok{ ecology.csl}
+\FunctionTok{csl:}\AttributeTok{ ecology.csl}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1329,5 +1332,15 @@ This first appendix includes an R chunk that was hidden in the document (using \
 
 \hypertarget{the-second-appendix-for-fun}{%
 \chapter{The Second Appendix, for Fun}\label{the-second-appendix-for-fun}}
+
+% Bibliography
+\phantomsection %anchor
+\begingroup
+    \setlength\bibitemsep{10pt}
+    \linespread{1}\selectfont            
+%    \cleardoupagepage
+    \addcontentsline{toc}{part}{References}
+    \printbibliography[title=References]
+\endgroup
 
 \end{document}

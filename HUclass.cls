@@ -130,25 +130,11 @@
 \Year{-unset-}
 \Month{-unset-}
 \Author{-unset-}
-\University{Harrisburg University of Science and Technology}
+\University{ }
 \Department{-unset-}
 \TitleTop{First line of title}
 \TitleMiddle{ }
 \TitleBottom{ } % default is empty
-\Advisor{Kevin Purcell Ph.D.}
-\AdvisorTitle{Ph.D.}
-\MemberA{Rand Ford}
-\MemberATitle{Ph.D.}
-\MemberB{Kevin Huggins}
-\MemberBTitle{Ph.D.}
-\MemberC{Roozbeh Sadeghian}
-\MemberCTitle{Ph.D.}
-\MemberD{Glenn Mitchell}
-\MemberDTitle{MD}
-\DepRep{Rand Ford, Ph.D.}
-\DepRepTitle{Chair}
-\Dean{Bilita Mattes, D.Ed}
-\DeanTitle{Provost}
 
 % ---------------------------- options ------------------------------
 
@@ -495,10 +481,10 @@ of \MakeUppercase{\@Author} find it satisfactory and recommend that it be accept
     \@University} 
     \vskip 0pt plus 2fill
     \noindent Accepted for the Department of Analytics\par\hfill
-    \signaturebox{\@MemberA, \@MemberATitle\\Chair, Department of Analytics\\
+    \signaturebox{\@DepRep \\Chair, Department of Analytics\\
     \@University} 
     \vfill \noindent Accepted for the University\par\hfill
-    \signaturebox{\@Dean, \\ \@DeanTitle \\
+    \signaturebox{\@Dean, \\Provost \\
     \@University}
     \clearemptydoublepage
   }
