@@ -61,6 +61,7 @@ abbreviations: "front-and-back-matter/abbreviations" # path to .tex file with ab
 ## bibliography path ##
 #######################
 bibliography: references.bib
+bibliography-heading-in-pdf: References
 
 #####################
 ## PDF formatting  ##
@@ -69,6 +70,8 @@ hidelinks: true #if false, the PDF output highlights clickable links with a colo
 toc-depth: 2 # depth of heading to include in table of contents
 lof: true # list of figures in front matter?
 lot: true # list of tables in front matter?
+bib-humanities: true   #set to true if you want in-text references formatted as author-year
+doi-in-bibliography: true #set to true if you want DOI's to be shown in the bibliography
 
 #####################
 ## output options  ##
