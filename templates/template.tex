@@ -192,17 +192,54 @@ $endif$
  \makepreliminarypages
  \doublespace
 
- % Make the table of contents.
- \tableofcontents
- \thispagestyle{plain}
- 
-  % Make the list of figures
- \mylistoffigures
- \thispagestyle{plain}
+%%%%% MINI TABLES
+% This lays the groundwork for per-chapter, mini tables of contents.  Comment the following line
+% (and remove \minitoc from the chapter files) if you don't want this.  Un-comment either of the
+% next two lines if you want a per-chapter list of figures or tables.
+$if(mini-toc)$
+  \dominitoc % include a mini table of contents
+$endif$
+$if(mini-lof)$
+  \dominilof  % include a mini list of figures
+$endif$
+$if(mini-lot)$
+  \dominilot  % include a mini list of tables
+$endif$
 
- % Make the list of tables
- \mylistoftables
- \thispagestyle{plain} 
+% This aligns the bottom of the text of each page.  It generally makes things look better.
+\flushbottom
+
+% This is where the whole-document ToC appears:
+\providecommand\pdfbookmark[3][]{} \pdfbookmark[0]{Contents}{bm:Contents}
+\tableofcontents
+\clearpage
+
+
+$if(lof)$
+\providecommand\phantomsection{} \phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}\listoffigures
+	\mtcaddchapter
+  	% \mtcaddchapter is needed when adding a non-chapter (but chapter-like) entity to avoid confusing minitoc
+$endif$
+\clearpage
+
+
+% Uncomment to generate a list of tables:
+$if(lot)$
+\providecommand\phantomsection{} \phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}\listoftables
+  \mtcaddchapter
+$endif$
+\clearpage
+
+%%%%% LIST OF ABBREVIATIONS
+% This example includes a list of abbreviations.  Look at text/abbreviations.tex to see how that file is
+% formatted.  The template can handle any kind of list though, so this might be a good place for a
+% glossary, etc.
+$if(abbreviations)$
+\include{$abbreviations$}
+$endif$
+
  
   % This page is OPTIONAL. To remove, comment out and \dedicationpage in _thesis.tex
  %\dedicationpage

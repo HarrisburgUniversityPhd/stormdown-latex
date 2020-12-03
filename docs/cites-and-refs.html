@@ -4,13 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Citations and cross-references | stormdown: A Harrisburg University Dissertation Template for R Markdown</title>
-  <meta name="description" content="stormdown:<br />
-A Harrisburg University Dissertation<br />
-Template for R Markdown</p>" />
+  <title>4 Citations and cross-references | Stromdown</title>
+  <meta name="description" content="4 Citations and cross-references | Stromdown" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Citations and cross-references | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
+  <meta property="og:title" content="4 Citations and cross-references | Stromdown" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/HarrisburgUniversityPhd/stormdown" />
   
@@ -18,7 +16,7 @@ Template for R Markdown</p>" />
   <meta name="github-repo" content="HarrisburgUniversityPhd/stormdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Citations and cross-references | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
+  <meta name="twitter:title" content="4 Citations and cross-references | Stromdown" />
   
   
   
@@ -26,7 +24,7 @@ Template for R Markdown</p>" />
 <meta name="author" content="Author Name" />
 
 
-<meta name="date" content="2020-12-02" />
+<meta name="date" content="2020-12-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -62,15 +60,14 @@ div.abstract{
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -79,16 +76,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -97,9 +92,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -230,9 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><code>stormdown</code>:<br />
-A Harrisburg University Dissertation<br />
-Template for R Markdown</p></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Stromdown</a>
           </h1>
         </div>
 
@@ -250,15 +243,15 @@ Then reference the path to this file in <strong>index.Rmd</strong>’s YAML head
 <p>Most reference managers can create a .bib file with you references automatically.
 However, the <strong>by far</strong> best reference manager to use with <em>R Markdown</em> is <a href="https://www.zotero.org">Zotero</a> with the <a href="https://retorque.re/zotero-better-bibtex/">Better BibTex plug-in</a>, because the <code>citr</code> plugin for RStudio (see below) can read references directly from your Zotero library!</p>
 <p>Here is an example of an entry in a <strong>.bib</strong> file:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb8-1"><a href="cites-and-refs.html#cb8-1"></a><span class="va">@article</span>{<span class="ot">Shea2014</span>,</span>
-<span id="cb8-2"><a href="cites-and-refs.html#cb8-2"></a>  <span class="dt">author</span> =        {Shea, Nicholas and Boldt, Annika},</span>
-<span id="cb8-3"><a href="cites-and-refs.html#cb8-3"></a>  <span class="dt">journal</span> =       {Trends in Cognitive Sciences},</span>
-<span id="cb8-4"><a href="cites-and-refs.html#cb8-4"></a>  <span class="dt">pages</span> =         {186--193},</span>
-<span id="cb8-5"><a href="cites-and-refs.html#cb8-5"></a>  <span class="dt">title</span> =         {{Supra-personal cognitive control}},</span>
-<span id="cb8-6"><a href="cites-and-refs.html#cb8-6"></a>  <span class="dt">volume</span> =        {18},</span>
-<span id="cb8-7"><a href="cites-and-refs.html#cb8-7"></a>  <span class="dt">year</span> =          {2014},</span>
-<span id="cb8-8"><a href="cites-and-refs.html#cb8-8"></a>  <span class="dt">doi</span> =           {10.1016/j.tics.2014.01.006},</span>
-<span id="cb8-9"><a href="cites-and-refs.html#cb8-9"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><a class="sourceLine" id="cb8-1" title="1"><span class="va">@article</span>{<span class="ot">Shea2014</span>,</a>
+<a class="sourceLine" id="cb8-2" title="2">  <span class="dt">author</span> =        {Shea, Nicholas and Boldt, Annika},</a>
+<a class="sourceLine" id="cb8-3" title="3">  <span class="dt">journal</span> =       {Trends in Cognitive Sciences},</a>
+<a class="sourceLine" id="cb8-4" title="4">  <span class="dt">pages</span> =         {186--193},</a>
+<a class="sourceLine" id="cb8-5" title="5">  <span class="dt">title</span> =         {{Supra-personal cognitive control}},</a>
+<a class="sourceLine" id="cb8-6" title="6">  <span class="dt">volume</span> =        {18},</a>
+<a class="sourceLine" id="cb8-7" title="7">  <span class="dt">year</span> =          {2014},</a>
+<a class="sourceLine" id="cb8-8" title="8">  <span class="dt">doi</span> =           {10.1016/j.tics.2014.01.006},</a>
+<a class="sourceLine" id="cb8-9" title="9">}</a></code></pre></div>
 <p>In this entry highlighed section, ‘Shea2014’ is the <strong>citation identifier</strong>.
 To default way to cite an entry in your text is with this syntax: <code>[@citation-identifier]</code>.</p>
 <p>So I might cite some things <span class="citation">(Shea et al. <a href="references.html#ref-Shea2014" role="doc-biblioref">2014</a>; Lottridge et al. <a href="references.html#ref-Lottridge2012" role="doc-biblioref">2012</a>)</span>.</p>
@@ -333,7 +326,7 @@ See <a href="cites-and-refs.html#cites-and-refs">our chapter title</a> for an ex
 <li><strong>GOTCHA</strong>: Figures and tables must have captions if you wish to cross-reference them.</li>
 </ul>
 <p>Let’s add an image:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="cites-and-refs.html#cb9-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figures/captain.jpeg&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figures/captain.jpeg&quot;</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:captain"></span>
 <img src="figures/captain.jpeg" alt="A marvel-lous meme" width="65%" />
 <p class="caption">
@@ -350,8 +343,8 @@ So Figure <a href="cites-and-refs.html#fig:captain">4.2</a> is <a href="cites-an
 <li>To refer to tables use the syntax <code>\@ref(tab:label)</code></li>
 </ul>
 <p>Let’s include a table:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="cites-and-refs.html#cb10-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(cars[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,],</span>
-<span id="cb10-2"><a href="cites-and-refs.html#cb10-2"></a>            <span class="dt">caption=</span><span class="st">&quot;Stopping cars&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>(cars[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,],</a>
+<a class="sourceLine" id="cb10-2" title="2">            <span class="dt">caption=</span><span class="st">&quot;Stopping cars&quot;</span>)</a></code></pre></div>
 <table>
 <caption><span id="tab:cars-table2">Table 4.1: </span>Stopping cars</caption>
 <thead>
@@ -419,20 +412,20 @@ LaTeX has a command for this, which looks like this: <code>\pageref{fig/tab:labe
 <h3><span class="header-section-number">4.3.2</span> Shorten captions shown in the list of tables (PDF)</h3>
 <p>You might want your list of tables (which follows the list of figures in your thesis front matter) to have shorter (or just different) table descriptions than the actual table captions.</p>
 <p>If you are using <code>knitr::kable</code> to generate a table, you can do this with the argument <code>caption.short</code>, e.g.:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="cites-and-refs.html#cb11-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(mtcars,</span>
-<span id="cb11-2"><a href="cites-and-refs.html#cb11-2"></a>              <span class="dt">caption =</span> <span class="st">&quot;A very long and descriptive (and potentially</span></span>
-<span id="cb11-3"><a href="cites-and-refs.html#cb11-3"></a><span class="st">              boring) caption that doesn&#39;t fit in the list of figures,</span></span>
-<span id="cb11-4"><a href="cites-and-refs.html#cb11-4"></a><span class="st">              but helps the reader understand what the figure </span></span>
-<span id="cb11-5"><a href="cites-and-refs.html#cb11-5"></a><span class="st">              communicates.&quot;</span>,</span>
-<span id="cb11-6"><a href="cites-and-refs.html#cb11-6"></a>              <span class="dt">caption.short =</span> <span class="st">&quot;A concise description for the list of tables&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>(mtcars,</a>
+<a class="sourceLine" id="cb11-2" title="2">              <span class="dt">caption =</span> <span class="st">&quot;A very long and descriptive (and potentially</span></a>
+<a class="sourceLine" id="cb11-3" title="3"><span class="st">              boring) caption that doesn&#39;t fit in the list of figures,</span></a>
+<a class="sourceLine" id="cb11-4" title="4"><span class="st">              but helps the reader understand what the figure </span></a>
+<a class="sourceLine" id="cb11-5" title="5"><span class="st">              communicates.&quot;</span>,</a>
+<a class="sourceLine" id="cb11-6" title="6">              <span class="dt">caption.short =</span> <span class="st">&quot;A concise description for the list of tables&quot;</span>)</a></code></pre></div>
 </div>
 <div id="shorting-the-running-header-pdf" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Shorting the running header (PDF)</h3>
 <p>You might want a chapter’s running header (i.e. the header showing the title of the current chapter at the top of page) to be shorter (or just different) to the actual chapter title.</p>
 <p>Do this by adding the latex command <code>\chaptermark{My shorter version}</code> after your chapter title.</p>
 <p>For example, this chapter’s running header is simply ‘Cites and cross-refs’, because it begins like this:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="cites-and-refs.html#cb12-1"></a><span class="fu"># Citations and cross-references {#cites-and-refs}</span></span>
-<span id="cb12-2"><a href="cites-and-refs.html#cb12-2"></a>\chaptermark{Cites and cross-refs}</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb12-1" title="1"><span class="fu"># Citations and cross-references {#cites-and-refs}</span></a>
+<a class="sourceLine" id="cb12-2" title="2">\chaptermark{Cites and cross-refs}</a></code></pre></div>
 
 </div>
 </div>
@@ -440,7 +433,7 @@ LaTeX has a command for this, which looks like this: <code>\pageref{fig/tab:labe
 <div class="footnotes">
 <hr />
 <ol start="3">
-<li id="fn3"><p>The bibliography can be in other formats as well, including EndNote (<strong>.enl</strong>) and RIS (<strong>.ris</strong>), see <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html">rmarkdown.rstudio.com/authoring_bibliographies_and_citations</a>.<a href="cites-and-refs.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>The bibliography can be in other formats as well, including EndNote (<strong>.enl</strong>) and RIS (<strong>.ris</strong>), see <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html">rmarkdown.rstudio.com/authoring_bibliographies_and_citations</a>.<a href="cites-and-refs.html#fnref3" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>

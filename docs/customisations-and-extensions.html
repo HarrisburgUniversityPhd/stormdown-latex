@@ -4,13 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Customisations and extensions | stormdown: A Harrisburg University Dissertation Template for R Markdown</title>
-  <meta name="description" content="stormdown:<br />
-A Harrisburg University Dissertation<br />
-Template for R Markdown</p>" />
+  <title>6 Customisations and extensions | Stromdown</title>
+  <meta name="description" content="6 Customisations and extensions | Stromdown" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Customisations and extensions | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
+  <meta property="og:title" content="6 Customisations and extensions | Stromdown" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/HarrisburgUniversityPhd/stormdown" />
   
@@ -18,7 +16,7 @@ Template for R Markdown</p>" />
   <meta name="github-repo" content="HarrisburgUniversityPhd/stormdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Customisations and extensions | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
+  <meta name="twitter:title" content="6 Customisations and extensions | Stromdown" />
   
   
   
@@ -26,7 +24,7 @@ Template for R Markdown</p>" />
 <meta name="author" content="Author Name" />
 
 
-<meta name="date" content="2020-12-02" />
+<meta name="date" content="2020-12-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -62,15 +60,14 @@ div.abstract{
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -79,16 +76,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -97,9 +92,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -230,9 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><code>stormdown</code>:<br />
-A Harrisburg University Dissertation<br />
-Template for R Markdown</p></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Stromdown</a>
           </h1>
         </div>
 
@@ -242,45 +235,46 @@ Template for R Markdown</p></a>
             <section class="normal" id="section-">
 <div id="customisations-and-extensions" class="section level1">
 <h1><span class="header-section-number">6</span> Customisations and extensions</h1>
-<p>This chapter describes a number of possible customizations to the <code>oxforddown</code> thesis.</p>
+<p>This chapter describes a number of possible customizations to the <code>stormdown</code> dissertation.</p>
 <div id="embedding-pdf-documents-as-chapters" class="section level2">
 <h2><span class="header-section-number">6.1</span> Embedding PDF documents as chapters</h2>
 <p>You may want to embed existing PDF documents into the thesis, for example if your department allows a ‘portfolio’ style thesis and you need to include an existing typeset publication as a chapter.</p>
 <p>In gitbook output, you can simply use <code>knitr::include_graphics</code> and it should include a scrollable (and downloadable) PDF.
 You will probably want to set the chunk options <code>out.width='100%'</code> and <code>out.height='1000px'</code>:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="customisations-and-extensions.html#cb14-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figures/pdf_example/Lyngs2020_FB.pdf&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figures/pdf_example/Lyngs2020_FB.pdf&quot;</span>)</a></code></pre></div>
 <embed src="figures/pdf_example/Lyngs2020_FB.pdf" width="100%" height="1000px" type="application/pdf" />
 <p><br></p>
 <p>In LaTeX output, however, this approach can cause odd behaviour.
-Therefore, when you build your thesis to PDF, split the PDF into an alphanumerically sorted sequence of <strong>single-page</strong> PDF files (you can do this automatically with the package <code>pdftools</code>). You can then use the appropriate LaTeX command to insert them, as shown below (for brevity, in the <code>oxforddown</code> PDF sample content we’re only including two pages)
+Therefore, when you build your thesis to PDF, split the PDF into an alphanumerically sorted sequence of <strong>single-page</strong> PDF files (you can do this automatically with the package <code>pdftools</code>).
+You can then use the appropriate LaTeX command to insert them, as shown below (for brevity, in the <code>stormdown</code> PDF sample content we’re only including two pages)
 <em>Note that the chunk option <code>results='asis'</code> must be set.</em>
 You may also want to remove margins from the PDF files, which you can do with Adobe Acrobat (paid version) and likely other software.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="customisations-and-extensions.html#cb15-1"></a><span class="co"># install.packages(pdftools)</span></span>
-<span id="cb15-2"><a href="customisations-and-extensions.html#cb15-2"></a><span class="co"># split PDF into pages stored in figures/pdf_example/split/</span></span>
-<span id="cb15-3"><a href="customisations-and-extensions.html#cb15-3"></a><span class="co"># pdftools::pdf_split(&quot;figures/pdf_example/Lyngs2020_FB.pdf&quot;,</span></span>
-<span id="cb15-4"><a href="customisations-and-extensions.html#cb15-4"></a><span class="co">#        output = &quot;figures/pdf_example/split/&quot;)</span></span>
-<span id="cb15-5"><a href="customisations-and-extensions.html#cb15-5"></a></span>
-<span id="cb15-6"><a href="customisations-and-extensions.html#cb15-6"></a><span class="co"># grab the pages</span></span>
-<span id="cb15-7"><a href="customisations-and-extensions.html#cb15-7"></a>pages &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="st">&quot;figures/pdf_example/split&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb15-8"><a href="customisations-and-extensions.html#cb15-8"></a></span>
-<span id="cb15-9"><a href="customisations-and-extensions.html#cb15-9"></a><span class="co"># set how wide you want the inserted PDFs to be: </span></span>
-<span id="cb15-10"><a href="customisations-and-extensions.html#cb15-10"></a><span class="co"># 1.0 is 100 per cent of the oxforddown PDF page width;</span></span>
-<span id="cb15-11"><a href="customisations-and-extensions.html#cb15-11"></a><span class="co"># you may want to make it a bit bigger</span></span>
-<span id="cb15-12"><a href="customisations-and-extensions.html#cb15-12"></a>pdf_width &lt;-<span class="st"> </span><span class="fl">1.2</span></span>
-<span id="cb15-13"><a href="customisations-and-extensions.html#cb15-13"></a></span>
-<span id="cb15-14"><a href="customisations-and-extensions.html#cb15-14"></a><span class="co"># for each PDF page, insert it nicely and</span></span>
-<span id="cb15-15"><a href="customisations-and-extensions.html#cb15-15"></a><span class="co"># end with a page break</span></span>
-<span id="cb15-16"><a href="customisations-and-extensions.html#cb15-16"></a><span class="kw">cat</span>(stringr<span class="op">::</span><span class="kw">str_c</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">newpage </span><span class="ch">\\</span><span class="st">begin{center} </span><span class="ch">\\</span><span class="st">makebox[</span><span class="ch">\\</span><span class="st">linewidth][c]{</span><span class="ch">\\</span><span class="st">includegraphics[width=&quot;</span>, pdf_width, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">linewidth]{&quot;</span>, pages, <span class="st">&quot;}} </span><span class="ch">\\</span><span class="st">end{center}&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="co"># install.packages(pdftools)</span></a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="co"># split PDF into pages stored in figures/pdf_example/split/</span></a>
+<a class="sourceLine" id="cb15-3" title="3"><span class="co"># pdftools::pdf_split(&quot;figures/pdf_example/Lyngs2020_FB.pdf&quot;,</span></a>
+<a class="sourceLine" id="cb15-4" title="4"><span class="co">#        output = &quot;figures/pdf_example/split/&quot;)</span></a>
+<a class="sourceLine" id="cb15-5" title="5"></a>
+<a class="sourceLine" id="cb15-6" title="6"><span class="co"># grab the pages</span></a>
+<a class="sourceLine" id="cb15-7" title="7">pages &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="st">&quot;figures/pdf_example/split&quot;</span>, <span class="dt">full.names =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb15-8" title="8"></a>
+<a class="sourceLine" id="cb15-9" title="9"><span class="co"># set how wide you want the inserted PDFs to be: </span></a>
+<a class="sourceLine" id="cb15-10" title="10"><span class="co"># 1.0 is 100 per cent of the stormdown PDF page width;</span></a>
+<a class="sourceLine" id="cb15-11" title="11"><span class="co"># you may want to make it a bit bigger</span></a>
+<a class="sourceLine" id="cb15-12" title="12">pdf_width &lt;-<span class="st"> </span><span class="fl">1.2</span></a>
+<a class="sourceLine" id="cb15-13" title="13"></a>
+<a class="sourceLine" id="cb15-14" title="14"><span class="co"># for each PDF page, insert it nicely and</span></a>
+<a class="sourceLine" id="cb15-15" title="15"><span class="co"># end with a page break</span></a>
+<a class="sourceLine" id="cb15-16" title="16"><span class="kw">cat</span>(stringr<span class="op">::</span><span class="kw">str_c</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">newpage </span><span class="ch">\\</span><span class="st">begin{center} </span><span class="ch">\\</span><span class="st">makebox[</span><span class="ch">\\</span><span class="st">linewidth][c]{</span><span class="ch">\\</span><span class="st">includegraphics[width=&quot;</span>, pdf_width, <span class="st">&quot;</span><span class="ch">\\</span><span class="st">linewidth]{&quot;</span>, pages, <span class="st">&quot;}} </span><span class="ch">\\</span><span class="st">end{center}&quot;</span>))</a></code></pre></div>
 </div>
 <div id="customizing-referencing" class="section level2">
 <h2><span class="header-section-number">6.2</span> Customizing referencing</h2>
 <div id="using-a-.csl-file-with-pandoc-instead-of-biblatex" class="section level3">
 <h3><span class="header-section-number">6.2.1</span> Using a .csl file with pandoc instead of biblatex</h3>
-<p>The <code>oxforddown</code> package uses biblatex in latex for referencing.
+<p>The <code>stormdown</code> package uses biblatex in latex for referencing.
 It is also possible to use pandoc for referencing by providing a .csl file in the YAML header of <strong>index.Rmd</strong> (likely requiring commenting out the biblatex code in <strong>templates/template.tex</strong>).
 This may be helpful for those who have a .csl file describing the referencing format for a particular journal.
 However, note that this approach does not support chapter bibliographies (see Section <a href="customisations-and-extensions.html#biblatex-custom">6.2.2</a>).</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb16-1"><a href="customisations-and-extensions.html#cb16-1"></a><span class="fu">csl</span><span class="kw">:</span><span class="at"> ecology.csl</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb16-1" title="1"><span class="fu">csl:</span><span class="at"> ecology.csl</span></a></code></pre></div>
 </div>
 <div id="biblatex-custom" class="section level3">
 <h3><span class="header-section-number">6.2.2</span> Customizing biblatex and adding chapter bibliographies</h3>
@@ -288,114 +282,114 @@ However, note that this approach does not support chapter bibliographies (see Se
 <p>In <strong>templates/template.tex</strong>, one can replace the existing biblatex calls with the following to achieve referencing that looks like this:</p>
 <p>(Charmantier and Gienapp 2014)</p>
 <p>Charmantier, A. and P. Gienapp (2014). Climate change and timing of avian breeding and migration: evolutionary versus plastic changes. Evolutionary Applications 7(1):15–28. doi: 10.1111/eva.12126.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb17-1"><a href="customisations-and-extensions.html#cb17-1"></a><span class="bu">\usepackage</span>[backend=biber,</span>
-<span id="cb17-2"><a href="customisations-and-extensions.html#cb17-2"></a>    bibencoding=utf8,</span>
-<span id="cb17-3"><a href="customisations-and-extensions.html#cb17-3"></a>    refsection=chapter, <span class="co">% referencing by chapter</span></span>
-<span id="cb17-4"><a href="customisations-and-extensions.html#cb17-4"></a>    style=authoryear, </span>
-<span id="cb17-5"><a href="customisations-and-extensions.html#cb17-5"></a>    firstinits=true,</span>
-<span id="cb17-6"><a href="customisations-and-extensions.html#cb17-6"></a>    isbn=false,</span>
-<span id="cb17-7"><a href="customisations-and-extensions.html#cb17-7"></a>    doi=true,</span>
-<span id="cb17-8"><a href="customisations-and-extensions.html#cb17-8"></a>    url=false,</span>
-<span id="cb17-9"><a href="customisations-and-extensions.html#cb17-9"></a>    eprint=false,</span>
-<span id="cb17-10"><a href="customisations-and-extensions.html#cb17-10"></a>    related=false,</span>
-<span id="cb17-11"><a href="customisations-and-extensions.html#cb17-11"></a>    dashed=false,</span>
-<span id="cb17-12"><a href="customisations-and-extensions.html#cb17-12"></a>    clearlang=true,</span>
-<span id="cb17-13"><a href="customisations-and-extensions.html#cb17-13"></a>    maxcitenames=2,</span>
-<span id="cb17-14"><a href="customisations-and-extensions.html#cb17-14"></a>    mincitenames=1,</span>
-<span id="cb17-15"><a href="customisations-and-extensions.html#cb17-15"></a>    maxbibnames=10,</span>
-<span id="cb17-16"><a href="customisations-and-extensions.html#cb17-16"></a>    abbreviate=false,</span>
-<span id="cb17-17"><a href="customisations-and-extensions.html#cb17-17"></a>    minbibnames=3,</span>
-<span id="cb17-18"><a href="customisations-and-extensions.html#cb17-18"></a>    uniquelist=minyear,</span>
-<span id="cb17-19"><a href="customisations-and-extensions.html#cb17-19"></a>    sortcites=true,</span>
-<span id="cb17-20"><a href="customisations-and-extensions.html#cb17-20"></a>    date=year</span>
-<span id="cb17-21"><a href="customisations-and-extensions.html#cb17-21"></a>]{<span class="ex">biblatex</span>}</span>
-<span id="cb17-22"><a href="customisations-and-extensions.html#cb17-22"></a><span class="fu">\AtEveryBibitem</span>{<span class="co">%</span></span>
-<span id="cb17-23"><a href="customisations-and-extensions.html#cb17-23"></a>  <span class="fu">\clearlist</span>{language}<span class="co">%</span></span>
-<span id="cb17-24"><a href="customisations-and-extensions.html#cb17-24"></a>  <span class="fu">\clearfield</span>{note}</span>
-<span id="cb17-25"><a href="customisations-and-extensions.html#cb17-25"></a>}</span>
-<span id="cb17-26"><a href="customisations-and-extensions.html#cb17-26"></a></span>
-<span id="cb17-27"><a href="customisations-and-extensions.html#cb17-27"></a><span class="fu">\DeclareFieldFormat</span>{titlecase}{<span class="fu">\MakeTitleCase</span>{#1}}</span>
-<span id="cb17-28"><a href="customisations-and-extensions.html#cb17-28"></a></span>
-<span id="cb17-29"><a href="customisations-and-extensions.html#cb17-29"></a><span class="fu">\newrobustcmd</span>{<span class="fu">\MakeTitleCase</span>}[1]{<span class="co">%</span></span>
-<span id="cb17-30"><a href="customisations-and-extensions.html#cb17-30"></a>  <span class="fu">\ifthenelse</span>{<span class="fu">\ifcurrentfield</span>{booktitle}<span class="fu">\OR\ifcurrentfield</span>{booksubtitle}<span class="co">%</span></span>
-<span id="cb17-31"><a href="customisations-and-extensions.html#cb17-31"></a>    <span class="fu">\OR\ifcurrentfield</span>{maintitle}<span class="fu">\OR\ifcurrentfield</span>{mainsubtitle}<span class="co">%</span></span>
-<span id="cb17-32"><a href="customisations-and-extensions.html#cb17-32"></a>    <span class="fu">\OR\ifcurrentfield</span>{journaltitle}<span class="fu">\OR\ifcurrentfield</span>{journalsubtitle}<span class="co">%</span></span>
-<span id="cb17-33"><a href="customisations-and-extensions.html#cb17-33"></a>    <span class="fu">\OR\ifcurrentfield</span>{issuetitle}<span class="fu">\OR\ifcurrentfield</span>{issuesubtitle}<span class="co">%</span></span>
-<span id="cb17-34"><a href="customisations-and-extensions.html#cb17-34"></a>    <span class="fu">\OR\ifentrytype</span>{book}<span class="fu">\OR\ifentrytype</span>{mvbook}<span class="fu">\OR\ifentrytype</span>{bookinbook}<span class="co">%</span></span>
-<span id="cb17-35"><a href="customisations-and-extensions.html#cb17-35"></a>    <span class="fu">\OR\ifentrytype</span>{booklet}<span class="fu">\OR\ifentrytype</span>{suppbook}<span class="co">%</span></span>
-<span id="cb17-36"><a href="customisations-and-extensions.html#cb17-36"></a>    <span class="fu">\OR\ifentrytype</span>{collection}<span class="fu">\OR\ifentrytype</span>{mvcollection}<span class="co">%</span></span>
-<span id="cb17-37"><a href="customisations-and-extensions.html#cb17-37"></a>    <span class="fu">\OR\ifentrytype</span>{suppcollection}<span class="fu">\OR\ifentrytype</span>{manual}<span class="co">%</span></span>
-<span id="cb17-38"><a href="customisations-and-extensions.html#cb17-38"></a>    <span class="fu">\OR\ifentrytype</span>{periodical}<span class="fu">\OR\ifentrytype</span>{suppperiodical}<span class="co">%</span></span>
-<span id="cb17-39"><a href="customisations-and-extensions.html#cb17-39"></a>    <span class="fu">\OR\ifentrytype</span>{proceedings}<span class="fu">\OR\ifentrytype</span>{mvproceedings}<span class="co">%</span></span>
-<span id="cb17-40"><a href="customisations-and-extensions.html#cb17-40"></a>    <span class="fu">\OR\ifentrytype</span>{reference}<span class="fu">\OR\ifentrytype</span>{mvreference}<span class="co">%</span></span>
-<span id="cb17-41"><a href="customisations-and-extensions.html#cb17-41"></a>    <span class="fu">\OR\ifentrytype</span>{report}<span class="fu">\OR\ifentrytype</span>{thesis}}</span>
-<span id="cb17-42"><a href="customisations-and-extensions.html#cb17-42"></a>    {#1}</span>
-<span id="cb17-43"><a href="customisations-and-extensions.html#cb17-43"></a>    {<span class="fu">\MakeSentenceCase</span>{#1}}}</span>
-<span id="cb17-44"><a href="customisations-and-extensions.html#cb17-44"></a>    </span>
-<span id="cb17-45"><a href="customisations-and-extensions.html#cb17-45"></a><span class="co">% \renewbibmacro{in:}{}</span></span>
-<span id="cb17-46"><a href="customisations-and-extensions.html#cb17-46"></a><span class="co">% suppress &quot;in&quot; for articles</span></span>
-<span id="cb17-47"><a href="customisations-and-extensions.html#cb17-47"></a><span class="co">% </span></span>
-<span id="cb17-48"><a href="customisations-and-extensions.html#cb17-48"></a><span class="fu">\renewbibmacro</span>{in:}{<span class="co">%</span></span>
-<span id="cb17-49"><a href="customisations-and-extensions.html#cb17-49"></a>  <span class="fu">\ifentrytype</span>{article}{}{<span class="fu">\printtext</span>{<span class="fu">\bibstring</span>{in}<span class="fu">\intitlepunct</span>}}}</span>
-<span id="cb17-50"><a href="customisations-and-extensions.html#cb17-50"></a><span class="co">%-- no &quot;quotes&quot; around titles of chapters/article titles</span></span>
-<span id="cb17-51"><a href="customisations-and-extensions.html#cb17-51"></a><span class="fu">\DeclareFieldFormat</span>[article, inbook, incollection, inproceedings, misc, thesis, unpublished]</span>
-<span id="cb17-52"><a href="customisations-and-extensions.html#cb17-52"></a>{title}{#1}</span>
-<span id="cb17-53"><a href="customisations-and-extensions.html#cb17-53"></a><span class="co">%-- no punctuation after volume</span></span>
-<span id="cb17-54"><a href="customisations-and-extensions.html#cb17-54"></a><span class="fu">\DeclareFieldFormat</span>[article]</span>
-<span id="cb17-55"><a href="customisations-and-extensions.html#cb17-55"></a>{volume}{{#1}}</span>
-<span id="cb17-56"><a href="customisations-and-extensions.html#cb17-56"></a><span class="co">%-- puts number/issue between brackets</span></span>
-<span id="cb17-57"><a href="customisations-and-extensions.html#cb17-57"></a><span class="fu">\DeclareFieldFormat</span>[article, inbook, incollection, inproceedings, misc, thesis, unpublished]</span>
-<span id="cb17-58"><a href="customisations-and-extensions.html#cb17-58"></a>{number}{<span class="fu">\mkbibparens</span>{#1}} </span>
-<span id="cb17-59"><a href="customisations-and-extensions.html#cb17-59"></a><span class="co">%-- and then for articles directly the pages w/o any &quot;pages&quot; or &quot;pp.&quot; </span></span>
-<span id="cb17-60"><a href="customisations-and-extensions.html#cb17-60"></a><span class="fu">\DeclareFieldFormat</span>[article]</span>
-<span id="cb17-61"><a href="customisations-and-extensions.html#cb17-61"></a>{pages}{#1}</span>
-<span id="cb17-62"><a href="customisations-and-extensions.html#cb17-62"></a><span class="co">%-- for some types replace &quot;pages&quot; by &quot;p.&quot;</span></span>
-<span id="cb17-63"><a href="customisations-and-extensions.html#cb17-63"></a><span class="fu">\DeclareFieldFormat</span>[inproceedings, incollection, inbook]</span>
-<span id="cb17-64"><a href="customisations-and-extensions.html#cb17-64"></a>{pages}{p. #1}</span>
-<span id="cb17-65"><a href="customisations-and-extensions.html#cb17-65"></a><span class="co">%-- format 16(4):224--225 for articles</span></span>
-<span id="cb17-66"><a href="customisations-and-extensions.html#cb17-66"></a><span class="fu">\renewbibmacro</span>*{volume+number+eid}{</span>
-<span id="cb17-67"><a href="customisations-and-extensions.html#cb17-67"></a>  <span class="fu">\printfield</span>{volume}<span class="co">%</span></span>
-<span id="cb17-68"><a href="customisations-and-extensions.html#cb17-68"></a>  <span class="fu">\printfield</span>{number}<span class="co">%</span></span>
-<span id="cb17-69"><a href="customisations-and-extensions.html#cb17-69"></a>  <span class="fu">\printunit</span>{<span class="fu">\addcolon</span>}</span>
-<span id="cb17-70"><a href="customisations-and-extensions.html#cb17-70"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode latex"><code class="sourceCode latex"><a class="sourceLine" id="cb17-1" title="1"><span class="bu">\usepackage</span>[backend=biber,</a>
+<a class="sourceLine" id="cb17-2" title="2">    bibencoding=utf8,</a>
+<a class="sourceLine" id="cb17-3" title="3">    refsection=chapter, <span class="co">% referencing by chapter</span></a>
+<a class="sourceLine" id="cb17-4" title="4">    style=authoryear, </a>
+<a class="sourceLine" id="cb17-5" title="5">    firstinits=true,</a>
+<a class="sourceLine" id="cb17-6" title="6">    isbn=false,</a>
+<a class="sourceLine" id="cb17-7" title="7">    doi=true,</a>
+<a class="sourceLine" id="cb17-8" title="8">    url=false,</a>
+<a class="sourceLine" id="cb17-9" title="9">    eprint=false,</a>
+<a class="sourceLine" id="cb17-10" title="10">    related=false,</a>
+<a class="sourceLine" id="cb17-11" title="11">    dashed=false,</a>
+<a class="sourceLine" id="cb17-12" title="12">    clearlang=true,</a>
+<a class="sourceLine" id="cb17-13" title="13">    maxcitenames=2,</a>
+<a class="sourceLine" id="cb17-14" title="14">    mincitenames=1,</a>
+<a class="sourceLine" id="cb17-15" title="15">    maxbibnames=10,</a>
+<a class="sourceLine" id="cb17-16" title="16">    abbreviate=false,</a>
+<a class="sourceLine" id="cb17-17" title="17">    minbibnames=3,</a>
+<a class="sourceLine" id="cb17-18" title="18">    uniquelist=minyear,</a>
+<a class="sourceLine" id="cb17-19" title="19">    sortcites=true,</a>
+<a class="sourceLine" id="cb17-20" title="20">    date=year</a>
+<a class="sourceLine" id="cb17-21" title="21">]{<span class="ex">biblatex</span>}</a>
+<a class="sourceLine" id="cb17-22" title="22"><span class="fu">\AtEveryBibitem</span>{<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-23" title="23">  <span class="fu">\clearlist</span>{language}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-24" title="24">  <span class="fu">\clearfield</span>{note}</a>
+<a class="sourceLine" id="cb17-25" title="25">}</a>
+<a class="sourceLine" id="cb17-26" title="26"></a>
+<a class="sourceLine" id="cb17-27" title="27"><span class="fu">\DeclareFieldFormat</span>{titlecase}{<span class="fu">\MakeTitleCase</span>{#1}}</a>
+<a class="sourceLine" id="cb17-28" title="28"></a>
+<a class="sourceLine" id="cb17-29" title="29"><span class="fu">\newrobustcmd</span>{<span class="fu">\MakeTitleCase</span>}[1]{<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-30" title="30">  <span class="fu">\ifthenelse</span>{<span class="fu">\ifcurrentfield</span>{booktitle}<span class="fu">\OR\ifcurrentfield</span>{booksubtitle}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-31" title="31">    <span class="fu">\OR\ifcurrentfield</span>{maintitle}<span class="fu">\OR\ifcurrentfield</span>{mainsubtitle}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-32" title="32">    <span class="fu">\OR\ifcurrentfield</span>{journaltitle}<span class="fu">\OR\ifcurrentfield</span>{journalsubtitle}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-33" title="33">    <span class="fu">\OR\ifcurrentfield</span>{issuetitle}<span class="fu">\OR\ifcurrentfield</span>{issuesubtitle}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-34" title="34">    <span class="fu">\OR\ifentrytype</span>{book}<span class="fu">\OR\ifentrytype</span>{mvbook}<span class="fu">\OR\ifentrytype</span>{bookinbook}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-35" title="35">    <span class="fu">\OR\ifentrytype</span>{booklet}<span class="fu">\OR\ifentrytype</span>{suppbook}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-36" title="36">    <span class="fu">\OR\ifentrytype</span>{collection}<span class="fu">\OR\ifentrytype</span>{mvcollection}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-37" title="37">    <span class="fu">\OR\ifentrytype</span>{suppcollection}<span class="fu">\OR\ifentrytype</span>{manual}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-38" title="38">    <span class="fu">\OR\ifentrytype</span>{periodical}<span class="fu">\OR\ifentrytype</span>{suppperiodical}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-39" title="39">    <span class="fu">\OR\ifentrytype</span>{proceedings}<span class="fu">\OR\ifentrytype</span>{mvproceedings}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-40" title="40">    <span class="fu">\OR\ifentrytype</span>{reference}<span class="fu">\OR\ifentrytype</span>{mvreference}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-41" title="41">    <span class="fu">\OR\ifentrytype</span>{report}<span class="fu">\OR\ifentrytype</span>{thesis}}</a>
+<a class="sourceLine" id="cb17-42" title="42">    {#1}</a>
+<a class="sourceLine" id="cb17-43" title="43">    {<span class="fu">\MakeSentenceCase</span>{#1}}}</a>
+<a class="sourceLine" id="cb17-44" title="44">    </a>
+<a class="sourceLine" id="cb17-45" title="45"><span class="co">% \renewbibmacro{in:}{}</span></a>
+<a class="sourceLine" id="cb17-46" title="46"><span class="co">% suppress &quot;in&quot; for articles</span></a>
+<a class="sourceLine" id="cb17-47" title="47"><span class="co">% </span></a>
+<a class="sourceLine" id="cb17-48" title="48"><span class="fu">\renewbibmacro</span>{in:}{<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-49" title="49">  <span class="fu">\ifentrytype</span>{article}{}{<span class="fu">\printtext</span>{<span class="fu">\bibstring</span>{in}<span class="fu">\intitlepunct</span>}}}</a>
+<a class="sourceLine" id="cb17-50" title="50"><span class="co">%-- no &quot;quotes&quot; around titles of chapters/article titles</span></a>
+<a class="sourceLine" id="cb17-51" title="51"><span class="fu">\DeclareFieldFormat</span>[article, inbook, incollection, inproceedings, misc, thesis, unpublished]</a>
+<a class="sourceLine" id="cb17-52" title="52">{title}{#1}</a>
+<a class="sourceLine" id="cb17-53" title="53"><span class="co">%-- no punctuation after volume</span></a>
+<a class="sourceLine" id="cb17-54" title="54"><span class="fu">\DeclareFieldFormat</span>[article]</a>
+<a class="sourceLine" id="cb17-55" title="55">{volume}{{#1}}</a>
+<a class="sourceLine" id="cb17-56" title="56"><span class="co">%-- puts number/issue between brackets</span></a>
+<a class="sourceLine" id="cb17-57" title="57"><span class="fu">\DeclareFieldFormat</span>[article, inbook, incollection, inproceedings, misc, thesis, unpublished]</a>
+<a class="sourceLine" id="cb17-58" title="58">{number}{<span class="fu">\mkbibparens</span>{#1}} </a>
+<a class="sourceLine" id="cb17-59" title="59"><span class="co">%-- and then for articles directly the pages w/o any &quot;pages&quot; or &quot;pp.&quot; </span></a>
+<a class="sourceLine" id="cb17-60" title="60"><span class="fu">\DeclareFieldFormat</span>[article]</a>
+<a class="sourceLine" id="cb17-61" title="61">{pages}{#1}</a>
+<a class="sourceLine" id="cb17-62" title="62"><span class="co">%-- for some types replace &quot;pages&quot; by &quot;p.&quot;</span></a>
+<a class="sourceLine" id="cb17-63" title="63"><span class="fu">\DeclareFieldFormat</span>[inproceedings, incollection, inbook]</a>
+<a class="sourceLine" id="cb17-64" title="64">{pages}{p. #1}</a>
+<a class="sourceLine" id="cb17-65" title="65"><span class="co">%-- format 16(4):224--225 for articles</span></a>
+<a class="sourceLine" id="cb17-66" title="66"><span class="fu">\renewbibmacro</span>*{volume+number+eid}{</a>
+<a class="sourceLine" id="cb17-67" title="67">  <span class="fu">\printfield</span>{volume}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-68" title="68">  <span class="fu">\printfield</span>{number}<span class="co">%</span></a>
+<a class="sourceLine" id="cb17-69" title="69">  <span class="fu">\printunit</span>{<span class="fu">\addcolon</span>}</a>
+<a class="sourceLine" id="cb17-70" title="70">}</a></code></pre></div>
 <p>If you would like chapter bibliographies, in addition insert the following code at the end of each chapter, and comment out the entire REFERENCES section at the end of template.tex.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb18-1"><a href="customisations-and-extensions.html#cb18-1"></a><span class="fu">\printbibliography</span>[segment=<span class="fu">\therefsection</span>,heading=subbibliography]</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode latex"><code class="sourceCode latex"><a class="sourceLine" id="cb18-1" title="1"><span class="fu">\printbibliography</span>[segment=<span class="fu">\therefsection</span>,heading=subbibliography]</a></code></pre></div>
 </div>
 </div>
 <div id="customizing-the-page-headers-and-footers" class="section level2">
 <h2><span class="header-section-number">6.3</span> Customizing the page headers and footers</h2>
-<p>The following code, when it replaces the existing correpsonding code block in <strong>ociamthesis.cls</strong>, puts chapter number and title centered in the header and page number in the footer, centered.
+<p>The following code, when it replaces the existing correpsonding code block in <strong>HUclass.cls</strong>, puts chapter number and title centered in the header and page number in the footer, centered.
 This may be desirable particularly when inserting PDF chapters, as the margins of the PDF may not exactly align with the left and right margins of the page, demarcated by the existing header and footer text.
 In the following code block, the original code is commented out where replaced.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode latex"><code class="sourceCode latex"><span id="cb19-1"><a href="customisations-and-extensions.html#cb19-1"></a><span class="bu">\usepackage</span>{<span class="ex">fancyhdr</span>}</span>
-<span id="cb19-2"><a href="customisations-and-extensions.html#cb19-2"></a><span class="fu">\setlength</span>{<span class="fu">\headheight</span>}{15pt}</span>
-<span id="cb19-3"><a href="customisations-and-extensions.html#cb19-3"></a><span class="fu">\fancyhf</span>{} <span class="co">% clear the header and footers</span></span>
-<span id="cb19-4"><a href="customisations-and-extensions.html#cb19-4"></a><span class="fu">\pagestyle</span>{fancy}</span>
-<span id="cb19-5"><a href="customisations-and-extensions.html#cb19-5"></a><span class="fu">\renewcommand</span>{<span class="ex">\chaptermark</span>}[1]{<span class="fu">\markboth</span>{<span class="fu">\thechapter</span>. #1}{<span class="fu">\thechapter</span>. #1}}</span>
-<span id="cb19-6"><a href="customisations-and-extensions.html#cb19-6"></a><span class="co">% \renewcommand{\chaptermark}[1]{\markboth{\thechapter. #1}{}}</span></span>
-<span id="cb19-7"><a href="customisations-and-extensions.html#cb19-7"></a><span class="fu">\renewcommand</span>{<span class="ex">\sectionmark</span>}[1]{<span class="fu">\markright</span>{<span class="fu">\thesection</span>. #1}}</span>
-<span id="cb19-8"><a href="customisations-and-extensions.html#cb19-8"></a><span class="fu">\renewcommand</span>{<span class="ex">\headrulewidth</span>}{0pt}</span>
-<span id="cb19-9"><a href="customisations-and-extensions.html#cb19-9"></a><span class="fu">\fancyhead</span>[CO]{<span class="fu">\emph</span>{<span class="fu">\leftmark</span>}}</span>
-<span id="cb19-10"><a href="customisations-and-extensions.html#cb19-10"></a><span class="fu">\fancyhead</span>[CE]{<span class="fu">\emph</span>{<span class="fu">\rightmark</span>}}</span>
-<span id="cb19-11"><a href="customisations-and-extensions.html#cb19-11"></a><span class="co">% \fancyhead[LO,RE]{}</span></span>
-<span id="cb19-12"><a href="customisations-and-extensions.html#cb19-12"></a><span class="co">% \fancyhead[LE,RO]{}</span></span>
-<span id="cb19-13"><a href="customisations-and-extensions.html#cb19-13"></a><span class="fu">\fancyfoot</span>[CO,CE]{<span class="fu">\emph</span>{<span class="fu">\thepage</span>}}</span>
-<span id="cb19-14"><a href="customisations-and-extensions.html#cb19-14"></a></span>
-<span id="cb19-15"><a href="customisations-and-extensions.html#cb19-15"></a><span class="fu">\fancypagestyle</span>{plain}{<span class="fu">\fancyhf</span>{}<span class="fu">\fancyfoot</span>[C]{<span class="fu">\emph</span>{<span class="fu">\thepage</span>}}}</span>
-<span id="cb19-16"><a href="customisations-and-extensions.html#cb19-16"></a></span>
-<span id="cb19-17"><a href="customisations-and-extensions.html#cb19-17"></a><span class="co">% JEM fix header on cleared pages for openright</span></span>
-<span id="cb19-18"><a href="customisations-and-extensions.html#cb19-18"></a><span class="fu">\def</span>\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else</span>
-<span id="cb19-19"><a href="customisations-and-extensions.html#cb19-19"></a>   \hbox{}</span>
-<span id="cb19-20"><a href="customisations-and-extensions.html#cb19-20"></a>   <span class="co">% \fancyhead[RE,LO]{}</span></span>
-<span id="cb19-21"><a href="customisations-and-extensions.html#cb19-21"></a>   \fancyhead[CE,CO]{}</span>
-<span id="cb19-22"><a href="customisations-and-extensions.html#cb19-22"></a>   \newpage</span>
-<span id="cb19-23"><a href="customisations-and-extensions.html#cb19-23"></a>   \if@twocolumn\hbox{}\newpage</span>
-<span id="cb19-24"><a href="customisations-and-extensions.html#cb19-24"></a>   \fi</span>
-<span id="cb19-25"><a href="customisations-and-extensions.html#cb19-25"></a>   <span class="co">% \fancyhead[LO]{\emph{\leftmark}} </span></span>
-<span id="cb19-26"><a href="customisations-and-extensions.html#cb19-26"></a>   <span class="co">% \fancyhead[RE]{\emph{\rightmark}} </span></span>
-<span id="cb19-27"><a href="customisations-and-extensions.html#cb19-27"></a>   \fancyhead[CO]{\emph{\leftmark}} </span>
-<span id="cb19-28"><a href="customisations-and-extensions.html#cb19-28"></a>   \fancyhead[CE]{\emph{\rightmark}} </span>
-<span id="cb19-29"><a href="customisations-and-extensions.html#cb19-29"></a>   \fi\fi}</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode latex"><code class="sourceCode latex"><a class="sourceLine" id="cb19-1" title="1"><span class="bu">\usepackage</span>{<span class="ex">fancyhdr</span>}</a>
+<a class="sourceLine" id="cb19-2" title="2"><span class="fu">\setlength</span>{<span class="fu">\headheight</span>}{15pt}</a>
+<a class="sourceLine" id="cb19-3" title="3"><span class="fu">\fancyhf</span>{} <span class="co">% clear the header and footers</span></a>
+<a class="sourceLine" id="cb19-4" title="4"><span class="fu">\pagestyle</span>{fancy}</a>
+<a class="sourceLine" id="cb19-5" title="5"><span class="fu">\renewcommand</span>{<span class="ex">\chaptermark</span>}[1]{<span class="fu">\markboth</span>{<span class="fu">\thechapter</span>. #1}{<span class="fu">\thechapter</span>. #1}}</a>
+<a class="sourceLine" id="cb19-6" title="6"><span class="co">% \renewcommand{\chaptermark}[1]{\markboth{\thechapter. #1}{}}</span></a>
+<a class="sourceLine" id="cb19-7" title="7"><span class="fu">\renewcommand</span>{<span class="ex">\sectionmark</span>}[1]{<span class="fu">\markright</span>{<span class="fu">\thesection</span>. #1}}</a>
+<a class="sourceLine" id="cb19-8" title="8"><span class="fu">\renewcommand</span>{<span class="ex">\headrulewidth</span>}{0pt}</a>
+<a class="sourceLine" id="cb19-9" title="9"><span class="fu">\fancyhead</span>[CO]{<span class="fu">\emph</span>{<span class="fu">\leftmark</span>}}</a>
+<a class="sourceLine" id="cb19-10" title="10"><span class="fu">\fancyhead</span>[CE]{<span class="fu">\emph</span>{<span class="fu">\rightmark</span>}}</a>
+<a class="sourceLine" id="cb19-11" title="11"><span class="co">% \fancyhead[LO,RE]{}</span></a>
+<a class="sourceLine" id="cb19-12" title="12"><span class="co">% \fancyhead[LE,RO]{}</span></a>
+<a class="sourceLine" id="cb19-13" title="13"><span class="fu">\fancyfoot</span>[CO,CE]{<span class="fu">\emph</span>{<span class="fu">\thepage</span>}}</a>
+<a class="sourceLine" id="cb19-14" title="14"></a>
+<a class="sourceLine" id="cb19-15" title="15"><span class="fu">\fancypagestyle</span>{plain}{<span class="fu">\fancyhf</span>{}<span class="fu">\fancyfoot</span>[C]{<span class="fu">\emph</span>{<span class="fu">\thepage</span>}}}</a>
+<a class="sourceLine" id="cb19-16" title="16"></a>
+<a class="sourceLine" id="cb19-17" title="17"><span class="co">% JEM fix header on cleared pages for openright</span></a>
+<a class="sourceLine" id="cb19-18" title="18"><span class="fu">\def</span>\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else</a>
+<a class="sourceLine" id="cb19-19" title="19">   \hbox{}</a>
+<a class="sourceLine" id="cb19-20" title="20">   <span class="co">% \fancyhead[RE,LO]{}</span></a>
+<a class="sourceLine" id="cb19-21" title="21">   \fancyhead[CE,CO]{}</a>
+<a class="sourceLine" id="cb19-22" title="22">   \newpage</a>
+<a class="sourceLine" id="cb19-23" title="23">   \if@twocolumn\hbox{}\newpage</a>
+<a class="sourceLine" id="cb19-24" title="24">   \fi</a>
+<a class="sourceLine" id="cb19-25" title="25">   <span class="co">% \fancyhead[LO]{\emph{\leftmark}} </span></a>
+<a class="sourceLine" id="cb19-26" title="26">   <span class="co">% \fancyhead[RE]{\emph{\rightmark}} </span></a>
+<a class="sourceLine" id="cb19-27" title="27">   \fancyhead[CO]{\emph{\leftmark}} </a>
+<a class="sourceLine" id="cb19-28" title="28">   \fancyhead[CE]{\emph{\rightmark}} </a>
+<a class="sourceLine" id="cb19-29" title="29">   \fi\fi}</a></code></pre></div>
 
 </div>
 </div>

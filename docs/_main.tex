@@ -61,7 +61,6 @@
 \usepackage{import}
 
 % ==================================================== % ==================================================== %
-\usepackage{lipsum}
 \usepackage{amsmath}
 \usepackage{ifpdf}
 
@@ -159,7 +158,19 @@
 
 % Acknowledge those who helped and supported you
 \Acknowledgments{
-  \lipsum[1-2]
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+  At vero eos et accusam et justo duo dolores et ea rebum.
+  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+  At vero eos et accusam et justo duo dolores et ea rebum.
+  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  
+  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  
+  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
 }
 
 % The text of your abstract
@@ -168,19 +179,34 @@
 %   Workaround: make the abstract a little longer or a little shorter.
 %
 \Abstract{
-  This \emph{R Markdown} template is for writing an Oxford University thesis. The template is built using Yihui Xie's \texttt{bookdown} package, with heavy inspiration from Chester Ismay's \texttt{thesisdown} and the \texttt{OxThesis} \LaTeX~template (most recently adapted by John McManigle).
+  This \emph{R Markdown} template is for writing an Harrisburg University dissertation.
+  The template is built using Yihui Xie's \texttt{bookdown} package, with heavy inspiration from Chester Ismay's \texttt{thesisdown} and the \texttt{OxThesis} \LaTeX~template (most recently adapted by John McManigle).
   
   This template's sample content include illustrations of how to write a thesis in R Markdown, and largely follows the structure from \href{https://ulyngs.github.io/rmarkdown-workshop-2019/}{this R Markdown workshop}.
   
-  Congratulations for taking a step further into the lands of open, reproducible science by writing your thesis using a tool that allows you to transparently include tables and dynamically generated plots directly from the underlying data. Hip hooray!
+  Congratulations for taking a step further into the lands of open, reproducible science by writing your thesis using a tool that allows you to transparently include tables and dynamically generated plots directly from the underlying data.
+  Hip hooray!
   
-  \lipsum[1]
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+  At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+  At vero eos et accusam et justo duo dolores et ea rebum.
+  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+  At vero eos et accusam et justo duo dolores et ea rebum.
+  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  
+  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  
+  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
 }
 
 % The text of your dedication
 % This page is OPTIONAL. To remove, comment out \dedicationpage in _thesis.tex
 \Dedication{
-  \lipsum[1-2]
+  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
 }
 
 
@@ -218,11 +244,8 @@
 \cfoot{\thepage}
 
 %UL 3 Dec 2018: set this from YAML in index.Rmd
-\usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=true, isbn=false, uniquename=false]{biblatex}
+\usepackage[style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=true, isbn=true, uniquename=false]{biblatex}
 \newcommand*{\bibtitle}{References}
-
-% This makes the bibliography left-aligned (not 'justified') and slightly smaller font.
-%\renewcommand*{\bibfont}{\raggedright\small}
 
 % Change this to the name of your .bib file (usually exported from a citation manager like Zotero or EndNote).
 \addbibresource{references.bib}
@@ -238,18 +261,40 @@
  % You can comment it out during the drafting process if you want to save paper.
  \makepreliminarypages
  \doublespace
- % Make the table of contents.
- \tableofcontents
- \thispagestyle{plain}
- 
-  % Make the list of figures
- \mylistoffigures
- \thispagestyle{plain}
 
- % Make the list of tables
- \mylistoftables
- \thispagestyle{plain}
- 
+%%%%% MINI TABLES
+% This lays the groundwork for per-chapter, mini tables of contents.  Comment the following line
+% (and remove \minitoc from the chapter files) if you don't want this.  Un-comment either of the
+% next two lines if you want a per-chapter list of figures or tables.
+
+% This aligns the bottom of the text of each page.  It generally makes things look better.
+\flushbottom
+
+% This is where the whole-document ToC appears:
+\providecommand\pdfbookmark[3][]{} \pdfbookmark[0]{Contents}{bm:Contents}
+\tableofcontents
+\clearpage
+
+
+\providecommand\phantomsection{} \phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}\listoffigures
+	\mtcaddchapter
+  	% \mtcaddchapter is needed when adding a non-chapter (but chapter-like) entity to avoid confusing minitoc
+\clearpage
+
+
+% Uncomment to generate a list of tables:
+\providecommand\phantomsection{} \phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}\listoftables
+  \mtcaddchapter
+\clearpage
+
+%%%%% LIST OF ABBREVIATIONS
+% This example includes a list of abbreviations.  Look at text/abbreviations.tex to see how that file is
+% formatted.  The template can handle any kind of list though, so this might be a good place for a
+% glossary, etc.
+\include{front-and-back-matter/abbreviations}
+
  
   % This page is OPTIONAL. To remove, comment out and \dedicationpage in _thesis.tex
  %\dedicationpage
@@ -620,7 +665,7 @@ The syntax is different for LaTeX and HTML, so for ease we might start by assign
 \end{Highlighting}
 \end{Shaded}
 
-Then you can reference that variable as the value of \texttt{out.extra} to rotate images, as in Figure \ref{fig:oxford-logo-rotated}.
+Then you can reference that variable as the value of \texttt{out.extra} to rotate images, as in Figure \ref{fig:HarrisburgU-logo-rotated}.
 
 \begin{figure}
 
@@ -1095,7 +1140,7 @@ I suspect some great solution will be developed in the not-to-distant future, pr
 \hypertarget{customisations-and-extensions}{%
 \chapter{Customisations and extensions}\label{customisations-and-extensions}}
 
-This chapter describes a number of possible customizations to the \texttt{oxforddown} thesis.
+This chapter describes a number of possible customizations to the \texttt{stormdown} dissertation.
 
 \hypertarget{embedding-pdf-documents-as-chapters}{%
 \section{Embedding PDF documents as chapters}\label{embedding-pdf-documents-as-chapters}}
@@ -1112,7 +1157,8 @@ You will probably want to set the chunk options \texttt{out.width=\textquotesing
 \end{Shaded}
 
 In LaTeX output, however, this approach can cause odd behaviour.
-Therefore, when you build your thesis to PDF, split the PDF into an alphanumerically sorted sequence of \textbf{single-page} PDF files (you can do this automatically with the package \texttt{pdftools}). You can then use the appropriate LaTeX command to insert them, as shown below (for brevity, in the \texttt{oxforddown} PDF sample content we're only including two pages)
+Therefore, when you build your thesis to PDF, split the PDF into an alphanumerically sorted sequence of \textbf{single-page} PDF files (you can do this automatically with the package \texttt{pdftools}).
+You can then use the appropriate LaTeX command to insert them, as shown below (for brevity, in the \texttt{stormdown} PDF sample content we're only including two pages)
 \emph{Note that the chunk option \texttt{results=\textquotesingle{}asis\textquotesingle{}} must be set.}
 You may also want to remove margins from the PDF files, which you can do with Adobe Acrobat (paid version) and likely other software.
 
@@ -1127,7 +1173,7 @@ You may also want to remove margins from the PDF files, which you can do with Ad
 \NormalTok{pages <-}\StringTok{ }\KeywordTok{list.files}\NormalTok{(}\StringTok{"figures/pdf_example/split"}\NormalTok{, }\DataTypeTok{full.names =} \OtherTok{TRUE}\NormalTok{)}
 
 \CommentTok{# set how wide you want the inserted PDFs to be:}
-\CommentTok{# 1.0 is 100 per cent of the oxforddown PDF page width;}
+\CommentTok{# 1.0 is 100 per cent of the stormdown PDF page width;}
 \CommentTok{# you may want to make it a bit bigger}
 \NormalTok{pdf_width <-}\StringTok{ }\FloatTok{1.2}
 
@@ -1147,7 +1193,7 @@ You may also want to remove margins from the PDF files, which you can do with Ad
 \hypertarget{using-a-.csl-file-with-pandoc-instead-of-biblatex}{%
 \subsection{Using a .csl file with pandoc instead of biblatex}\label{using-a-.csl-file-with-pandoc-instead-of-biblatex}}
 
-The \texttt{oxforddown} package uses biblatex in latex for referencing.
+The \texttt{stormdown} package uses biblatex in latex for referencing.
 It is also possible to use pandoc for referencing by providing a .csl file in the YAML header of \textbf{index.Rmd} (likely requiring commenting out the biblatex code in \textbf{templates/template.tex}).
 This may be helpful for those who have a .csl file describing the referencing format for a particular journal.
 However, note that this approach does not support chapter bibliographies (see Section \ref{biblatex-custom}).
@@ -1255,7 +1301,7 @@ If you would like chapter bibliographies, in addition insert the following code 
 \hypertarget{customizing-the-page-headers-and-footers}{%
 \section{Customizing the page headers and footers}\label{customizing-the-page-headers-and-footers}}
 
-The following code, when it replaces the existing correpsonding code block in \textbf{ociamthesis.cls}, puts chapter number and title centered in the header and page number in the footer, centered.
+The following code, when it replaces the existing correpsonding code block in \textbf{HUclass.cls}, puts chapter number and title centered in the header and page number in the footer, centered.
 This may be desirable particularly when inserting PDF chapters, as the margins of the PDF may not exactly align with the left and right margins of the page, demarcated by the existing header and footer text.
 In the following code block, the original code is commented out where replaced.
 
@@ -1301,17 +1347,8 @@ If we don't want Conclusion to have a chapter number next to it, we can add the 
 
 \textbf{More info}
 
-And here's some other random info: the first paragraph after a chapter title or section head \emph{shouldn't be} indented, because indents are to tell the reader that you're starting a new paragraph. Since that's obvious after a chapter or section title, proper typesetting doesn't add an indent there.
-
-%%%%% REFERENCES
-
-% JEM: Quote for the top of references (just like a chapter quote if you're using them).  Comment to skip.
-% \begin{savequote}[8cm]
-% The first kind of intellectual and artistic personality belongs to the hedgehogs, the second to the foxes \dots
-%   \qauthor{--- Sir Isaiah Berlin \cite{berlin_hedgehog_2013}}
-% \end{savequote}
-
-\setlength{\baselineskip}{0pt} % JEM: Single-space References
+And here's some other random info: the first paragraph after a chapter title or section head \emph{shouldn't be} indented, because indents are to tell the reader that you're starting a new paragraph.
+Since that's obvious after a chapter or section title, proper typesetting doesn't add an indent there.
 
 {\renewcommand*\MakeUppercase[1]{#1}%
 \printbibliography[heading=bibintoc,title={\bibtitle}]}

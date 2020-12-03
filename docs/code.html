@@ -4,13 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Adding code | stormdown: A Harrisburg University Dissertation Template for R Markdown</title>
-  <meta name="description" content="stormdown:<br />
-A Harrisburg University Dissertation<br />
-Template for R Markdown</p>" />
+  <title>3 Adding code | Stromdown</title>
+  <meta name="description" content="3 Adding code | Stromdown" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Adding code | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
+  <meta property="og:title" content="3 Adding code | Stromdown" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/HarrisburgUniversityPhd/stormdown" />
   
@@ -18,7 +16,7 @@ Template for R Markdown</p>" />
   <meta name="github-repo" content="HarrisburgUniversityPhd/stormdown" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Adding code | stormdown: A Harrisburg University Dissertation Template for R Markdown" />
+  <meta name="twitter:title" content="3 Adding code | Stromdown" />
   
   
   
@@ -26,7 +24,7 @@ Template for R Markdown</p>" />
 <meta name="author" content="Author Name" />
 
 
-<meta name="date" content="2020-12-02" />
+<meta name="date" content="2020-12-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -62,15 +60,14 @@ div.abstract{
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -79,16 +76,14 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -97,9 +92,9 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+a.sourceLine::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -230,9 +225,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"><p><code>stormdown</code>:<br />
-A Harrisburg University Dissertation<br />
-Template for R Markdown</p></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Stromdown</a>
           </h1>
         </div>
 
@@ -276,7 +269,7 @@ library(tidyverse)
 <div id="including-images" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Including images</h3>
 <p>Code chunks are also used for including images, with <code>include_graphics</code> from the <code>knitr</code> package, as in Figure <a href="code.html#fig:HarrisburgU-logo">3.2</a></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="code.html#cb3-1"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figures/HarrisburgU_Logo.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&quot;figures/HarrisburgU_Logo.png&quot;</span>)</a></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:HarrisburgU-logo"></span>
 <img src="figures/HarrisburgU_Logo.png" alt="HarrisburgU logo" width="50%" />
 <p class="caption">
@@ -292,12 +285,12 @@ Figure 3.2: HarrisburgU logo
 <h4>Figure rotation</h4>
 <p>You can use the chunk option <code>out.extra</code> to rotate images.</p>
 <p>The syntax is different for LaTeX and HTML, so for ease we might start by assigning the right string to a variable that depends on the format you’re outputting to:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="code.html#cb4-1"></a><span class="cf">if</span> (knitr<span class="op">::</span>opts_knit<span class="op">$</span><span class="kw">get</span>(<span class="st">&#39;rmarkdown.pandoc.to&#39;</span>) <span class="op">==</span><span class="st"> &#39;latex&#39;</span>){</span>
-<span id="cb4-2"><a href="code.html#cb4-2"></a>  rotate180 &lt;-<span class="st"> &quot;angle=180&quot;</span></span>
-<span id="cb4-3"><a href="code.html#cb4-3"></a>} <span class="cf">else</span> {</span>
-<span id="cb4-4"><a href="code.html#cb4-4"></a>  rotate180 &lt;-<span class="st"> &quot;style=&#39;transform:rotate(180deg);&#39;&quot;</span></span>
-<span id="cb4-5"><a href="code.html#cb4-5"></a>}</span></code></pre></div>
-<p>Then you can reference that variable as the value of <code>out.extra</code> to rotate images, as in Figure <a href="#fig:oxford-logo-rotated"><strong>??</strong></a>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="cf">if</span> (knitr<span class="op">::</span>opts_knit<span class="op">$</span><span class="kw">get</span>(<span class="st">&#39;rmarkdown.pandoc.to&#39;</span>) <span class="op">==</span><span class="st"> &#39;latex&#39;</span>){</a>
+<a class="sourceLine" id="cb4-2" title="2">  rotate180 &lt;-<span class="st"> &quot;angle=180&quot;</span></a>
+<a class="sourceLine" id="cb4-3" title="3">} <span class="cf">else</span> {</a>
+<a class="sourceLine" id="cb4-4" title="4">  rotate180 &lt;-<span class="st"> &quot;style=&#39;transform:rotate(180deg);&#39;&quot;</span></a>
+<a class="sourceLine" id="cb4-5" title="5">}</a></code></pre></div>
+<p>Then you can reference that variable as the value of <code>out.extra</code> to rotate images, as in Figure <a href="code.html#fig:HarrisburgU-logo-rotated">3.3</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:HarrisburgU-logo-rotated"></span>
 <img src="figures/HarrisburgU_Logo.png" alt="HarrisburgU logo, rotated" width="50%" style='transform:rotate(180deg);' />
 <p class="caption">
@@ -310,10 +303,10 @@ Figure 3.3: HarrisburgU logo, rotated
 <h3><span class="header-section-number">3.1.3</span> Including plots</h3>
 <p>Similarly, code chunks are used for including dynamically generated plots.
 You use ordinary code in R or other languages - Figure <a href="code.html#fig:cars-plot">3.4</a> shows a plot of the <code>cars</code> dataset of stopping distances for cars at various speeds (this dataset is built in to <strong>R</strong>).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="code.html#cb5-1"></a>cars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb5-2"><a href="code.html#cb5-2"></a><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb5-3"><a href="code.html#cb5-3"></a><span class="st">    </span><span class="kw">aes</span>(<span class="dt">x =</span> speed, <span class="dt">y =</span> dist) <span class="op">+</span></span>
-<span id="cb5-4"><a href="code.html#cb5-4"></a><span class="st">    </span><span class="kw">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">cars <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="st">  </span><span class="kw">ggplot</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="st">    </span><span class="kw">aes</span>(<span class="dt">x =</span> speed, <span class="dt">y =</span> dist) <span class="op">+</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="st">    </span><span class="kw">geom_point</span>()</a></code></pre></div>
 <div class="figure"><span id="fig:cars-plot"></span>
 <img src="_main_files/figure-html/cars-plot-1.png" alt="A ggplot of car stuff" width="672" />
 <p class="caption">
@@ -326,9 +319,9 @@ Figure 3.4: A ggplot of car stuff
 <h3><span class="header-section-number">3.1.4</span> Including tables</h3>
 <p>Tables are usually included with the <code>kable</code> function from the <code>knitr</code> package.</p>
 <p>Table <a href="code.html#tab:cars-table">3.1</a> shows the first rows of that cars data - read in your own data, then use this approach to automatically generate tables.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="code.html#cb6-1"></a>cars <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb6-2"><a href="code.html#cb6-2"></a><span class="st">  </span><span class="kw">head</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb6-3"><a href="code.html#cb6-3"></a><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="dt">caption =</span> <span class="st">&quot;A knitr kable table&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">cars <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-2" title="2"><span class="st">  </span><span class="kw">head</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="st">  </span>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="dt">caption =</span> <span class="st">&quot;A knitr kable table&quot;</span>)</a></code></pre></div>
 <table>
 <caption><span id="tab:cars-table">Table 3.1: </span>A knitr kable table</caption>
 <thead>
@@ -384,7 +377,7 @@ Figure 3.4: A ggplot of car stuff
 <p>For example, <code>`r 4 + 4`</code> would output 8 in your text.</p>
 <p>You will usually use this in parts of your thesis where you report results - read in data or results in a code chunk, store things you want to report in a variable, then insert the value of that variable in your text.</p>
 <p>For example, we might assign the number of rows in the <code>cars</code> dataset to a variable:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="code.html#cb7-1"></a>num_car_observations &lt;-<span class="st"> </span><span class="kw">nrow</span>(cars)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1">num_car_observations &lt;-<span class="st"> </span><span class="kw">nrow</span>(cars)</a></code></pre></div>
 <p>We might then write:<br />
 “In the <code>cars</code> dataset, we have <code>`r num_car_observations`</code> observations.”</p>
 <p>Which would output:<br />

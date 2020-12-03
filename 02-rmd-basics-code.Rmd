@@ -70,7 +70,7 @@ if (knitr::opts_knit$get('rmarkdown.pandoc.to') == 'latex'){
 }
 ```
 
-Then you can reference that variable as the value of `out.extra` to rotate images, as in Figure \@ref(fig:oxford-logo-rotated).
+Then you can reference that variable as the value of `out.extra` to rotate images, as in Figure \@ref(fig:HarrisburgU-logo-rotated).
 
 ```{r HarrisburgU-logo-rotated, out.extra=rotate180, fig.cap="HarrisburgU logo, rotated", out.width='50%', fig.align='center', echo=FALSE}
 knitr::include_graphics("figures/HarrisburgU_Logo.png")

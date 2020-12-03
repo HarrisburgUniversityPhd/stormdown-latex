@@ -577,3 +577,23 @@ of \MakeUppercase{\@Author} find it satisfactory and recommend that it be accept
 \usepackage{csquotes}
 \hyphenpenalty=500
 \def\longs{{\fontencoding{TS1}\selectfont s}}
+
+
+% JEM: Stuff for List of Abbreviations (or Glossary or other list)
+\usepackage{calc}
+\usepackage{minitoc}
+\newcommand{\t@cfill}{\cleaders\hbox{$\m@th \mkern\@dotsep mu . \mkern\@dotsep mu$}\hfill}
+\newcommand{\abbrl@bel}[1]{\makebox[\labelwidth][l]{\textbf{#1}\ \t@cfill}}
+\newenvironment{mclistof}[2]{%
+   \chapter*{#1}%
+   \addcontentsline{toc}{chapter}{#1}
+   \begin{list}{}%
+   {\renewcommand{\makelabel}{\abbrl@bel}%
+    \setlength{\labelwidth}{#2}%
+    \setlength{\leftmargin}{\labelwidth+\labelsep}%
+    \setlength{\itemsep}{0pt}%
+    \markboth{#1}{#1}%
+   }}
+   {\end{list}\mtcaddchapter}
+
+
