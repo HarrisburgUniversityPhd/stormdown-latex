@@ -79,7 +79,7 @@ doi-in-bibliography: true #set to true if you want DOI's to be shown in the bibl
 knit: "bookdown::render_book"
 output:
   bookdown::pdf_book:
-    template: templates/_thesis.tex
+    template: templates/template.tex
     keep_tex: true
     citation_package: biblatex  
     pandoc_args: ["--lua-filter=scripts_and_filters/correction_filter.lua"] #remove filter to stop applying blue background to inline corrections
