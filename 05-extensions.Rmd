@@ -8,7 +8,7 @@ bibliography: references.bib
   
 # Customisations and extensions
 
-This chapter describes a number of possible customizations to the `oxforddown` thesis. 
+This chapter describes a number of possible customizations to the `stormdown` dissertation. 
 
 ## Embedding PDF documents as chapters
 
@@ -23,7 +23,8 @@ knitr::include_graphics("figures/pdf_example/Lyngs2020_FB.pdf")
 <br>
 
 In LaTeX output, however, this approach can cause odd behaviour.
-Therefore, when you build your thesis to PDF, split the PDF into an alphanumerically sorted sequence of **single-page** PDF files (you can do this automatically with the package `pdftools`). You can then use the appropriate LaTeX command to insert them, as shown below (for brevity, in the `oxforddown` PDF sample content we're only including two pages)
+Therefore, when you build your thesis to PDF, split the PDF into an alphanumerically sorted sequence of **single-page** PDF files (you can do this automatically with the package `pdftools`).
+You can then use the appropriate LaTeX command to insert them, as shown below (for brevity, in the `stormdown` PDF sample content we're only including two pages)
 *Note that the chunk option `results='asis'` must be set.*
 You may also want to remove margins from the PDF files, which you can do with Adobe Acrobat (paid version) and likely other software.
 
@@ -37,20 +38,20 @@ You may also want to remove margins from the PDF files, which you can do with Ad
 pages <- list.files("figures/pdf_example/split", full.names = TRUE)
 
 # set how wide you want the inserted PDFs to be: 
-# 1.0 is 100 per cent of the oxforddown PDF page width;
+# 1.0 is 100 per cent of the stormdown PDF page width;
 # you may want to make it a bit bigger
 pdf_width <- 1.2
 
 # for each PDF page, insert it nicely and
 # end with a page break
 cat(stringr::str_c("\\newpage \\begin{center} \\makebox[\\linewidth][c]{\\includegraphics[width=", pdf_width, "\\linewidth]{", pages, "}} \\end{center}"))
-
 ```
 
 ## Customizing referencing 
 
 ### Using a .csl file with pandoc instead of biblatex
-The `oxforddown` package uses biblatex in latex for referencing. 
+
+The `stormdown` package uses biblatex in latex for referencing. 
 It is also possible to use pandoc for referencing by providing a .csl file in the YAML header of **index.Rmd** (likely requiring commenting out the biblatex code in **templates/template.tex**). 
 This may be helpful for those who have a .csl file describing the referencing format for a particular journal. 
 However, note that this approach does not support chapter bibliographies (see Section \@ref(biblatex-custom)).
@@ -151,7 +152,7 @@ If you would like chapter bibliographies, in addition insert the following code 
 
 ## Customizing the page headers and footers
 
-The following code, when it replaces the existing correpsonding code block in **ociamthesis.cls**, puts chapter number and title centered in the header and page number in the footer, centered. 
+The following code, when it replaces the existing correpsonding code block in **HUclass.cls**, puts chapter number and title centered in the header and page number in the footer, centered. 
 This may be desirable particularly when inserting PDF chapters, as the margins of the PDF may not exactly align with the left and right margins of the page, demarcated by the existing header and footer text. 
 In the following code block, the original code is commented out where replaced.
 
