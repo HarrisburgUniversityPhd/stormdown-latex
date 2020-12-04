@@ -5,5 +5,12 @@
 
 # intermediate knit
 _bookdown_files
-_main.*
-!docs/_main.*
+*.log
+*.maf
+*.mtc*
+*.pdf
+*.tex
+
+# final knit
+!docs/*.pdf
+!docs/*.tex

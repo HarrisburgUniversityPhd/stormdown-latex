@@ -47,9 +47,6 @@
 % The full name of the degree
 \newcommand{\degree}[1]{\gdef\@degree{#1}}
 
-% The full name of the degree
-\newcommand{\DegreeShort}[1]{\gdef\@DegreeShort{#1}}
-
 % First line of title
 \newcommand{\TitleTop}[1]{\gdef\@TitleTop{\mbox{#1}}}
 
@@ -73,12 +70,6 @@
 
 % The institution name
 \newcommand{\University}[1]{\gdef\@University{#1}}
-
-% The College name
-\newcommand{\College}[1]{\gdef\@College{#1}}
-
-% The institution name
-\newcommand{\Researchgroup}[1]{\gdef\@Researchgroup{#1}}
 
 % The department name
 \newcommand{\Department}[1]{\gdef\@Department{#1}}
@@ -112,7 +103,6 @@
 
 % The tile of the committee member 5
 \newcommand{\MemberDTitle}[1]{\gdef\@MemberDTitle{#1}}
-% If you only have three members including your advisor then delete Member C (needs multiple deletes below too)
 
 % The name of the department chair
 \newcommand{\DepRep}[1]{\gdef\@DepRep{#1}}
@@ -130,7 +120,7 @@
 \Year{-unset-}
 \Month{-unset-}
 \Author{-unset-}
-\University{ }
+\University{-unset-}
 \Department{-unset-}
 \TitleTop{First line of title}
 \TitleMiddle{ }
@@ -507,7 +497,6 @@ of \MakeUppercase{\@Author} find it satisfactory and recommend that it be accept
 % ======================= Appendix Page ============================
 \newcommand{\appendixpage}{
     \newpage
-    %\thispagestyle{plain}%
     \thispagestyle{empty}
     \begin{center}
     \providecommand\pdfbookmark[3][]{} \pdfbookmark[0]{Appendix}{bm:APPENDIX}
@@ -530,7 +519,6 @@ of \MakeUppercase{\@Author} find it satisfactory and recommend that it be accept
 % ========================= Acknowledgments ==============================
 \newcommand{\acknowledgmentspage}{
     \providecommand\phantomsection{} \phantomsection
-    %\addcontentsline{toc}{part}{Acknowledgments}
     \thispagestyle{plain}
     \renewcommand{\baselinestretch}{1}\small\normalsize
     \begin{center}
@@ -548,20 +536,12 @@ of \MakeUppercase{\@Author} find it satisfactory and recommend that it be accept
 
 \newcommand{\abstractpage}{
     \providecommand\phantomsection{} \phantomsection
-    %\addcontentsline{toc}{part}{Abstract}
     \begin{abstractenv}
     \renewcommand{\baselinestretch}{1}\small\normalsize
     \begin{center}
     \providecommand\pdfbookmark[3][]{} \pdfbookmark[0]{Abstract}{bm:Abstract}
     \vspace*{.1in}
-    %\@TitleTop\\[\baselineskip]
-    %\@TitleMiddle\\[\baselineskip]
-    %\@TitleBottom\\
-    %by \@Author, \@DegreeShort\\
-    %\@University\\
-    %\@Month~\@Year\\[3\baselineskip]
     \textbf{ABSTRACT}\\[2\baselineskip]
-    %\@DepRepTitle: \@Advisor \\[2\baselineskip]
     \end{center}
     \renewcommand{\baselinestretch}{1.66}\small\normalsize
     \@Abstract

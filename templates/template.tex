@@ -23,21 +23,12 @@ $endif$
 
 \usepackage{import}
 
-% ==================================================== % ==================================================== %
 \usepackage{amsmath}
-\usepackage{ifpdf}
-
 \usepackage{xcolor}
-\ifpdf  
-  \usepackage[pdftex]{graphicx}
-\else
-  \usepackage[dvips]{graphicx}
-\fi
-
+\usepackage{graphicx}
 \usepackage{afterpage}
 \usepackage{rotating}
-%\usepackage{subfigure}
-% Change the CLASS FILE from HUclass to bookbinding (and edit class file names accordingly) after your thesis is turned in electronically so you can get your dissertation bound and don't forget to change the above from oneside to twoside!!!!!!!!!!!!!!
+
 \usepackage{fancyhdr}
   \fancyfoot[C,CO]{\textbf{\thepage}}
   \pagestyle{plain}
@@ -49,11 +40,6 @@ $endif$
 \usepackage[margin=0.3in,labelfont=bf,labelsep=none]{caption}
  \DeclareCaptionFormat{suggested}{\singlespace#1#2 #3\par\doublespace}
  \captionsetup{format=suggested}
-
-% The cite package cleans up the way citations are handled.  For example, it
-% changes the citation [1,2,3,6,7,8,9,10,11] into [1-3,6-11].  If your advisor
-% wants superscript citations, use the overcite package instead of the cite package.
-%\usepackage{cite}
 
 % The makeidx package makes your index for you.  To make an index entry,
 % go to the place in the book that should be referenced and type
@@ -102,7 +88,6 @@ $endif$
   \Month{$date2.month$}
   \Author{$author$}
   \Department{$department$}
-  \DegreeShort{Ph.D.}
   \University{$university$}
 
 % If you have a long title, split it between two lines. The \TitleBottom field defines the second line
@@ -191,20 +176,6 @@ $endif$
  % You can comment it out during the drafting process if you want to save paper.
  \makepreliminarypages
  \doublespace
-
-%%%%% MINI TABLES
-% This lays the groundwork for per-chapter, mini tables of contents.  Comment the following line
-% (and remove \minitoc from the chapter files) if you don't want this.  Un-comment either of the
-% next two lines if you want a per-chapter list of figures or tables.
-$if(mini-toc)$
-  \dominitoc % include a mini table of contents
-$endif$
-$if(mini-lof)$
-  \dominilof  % include a mini list of figures
-$endif$
-$if(mini-lot)$
-  \dominilot  % include a mini list of tables
-$endif$
 
 % This aligns the bottom of the text of each page.  It generally makes things look better.
 \flushbottom
